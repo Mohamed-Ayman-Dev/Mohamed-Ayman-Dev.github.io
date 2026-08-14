@@ -24,15 +24,23 @@ Recommended: compress screenshots before adding them, e.g. with [Squoosh](https:
 
 ## Deploy to GitHub Pages
 
-1. Create a repository on GitHub (e.g. `portfolio`).
-2. Push this project:
+The site is published as a GitHub **user site**, so the repository must be named
+`Mohamed-Ayman-Dev.github.io` and Pages serves the default branch at the root domain.
 
 ```bash
-git remote add origin git@github.com:Mohamed-Ayman-Dev/portfolio.git
-git push -u origin main
+gh auth login                      # one time
+gh repo create Mohamed-Ayman-Dev.github.io --public --source=. --remote=origin --push
 ```
 
-3. On GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root)**.
-4. The site will be live at `https://mohamed-ayman-dev.github.io/portfolio/`.
+Pages turns itself on for user-site repositories; the site goes live at
+`https://mohamed-ayman-dev.github.io/` within a minute or two of the first push.
 
-> If you rename the repo to `Mohamed-Ayman-Dev.github.io`, the site is served at the root domain instead — update the `canonical` and `og:url` meta tags in `index.html` accordingly.
+After that, deploying is just:
+
+```bash
+git add -A && git commit -m "..." && git push
+```
+
+> The `canonical`, `og:url` and `og:image` meta tags in `index.html` are absolute URLs
+> pointing at that domain. If the repository is ever renamed to a normal project repo,
+> those three tags need the `/<repo-name>/` path added back.
