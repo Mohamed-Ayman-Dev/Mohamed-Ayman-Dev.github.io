@@ -213,11 +213,12 @@
   .proj-card{
     background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px;
     transition:border-color .18s, transform .18s, box-shadow .18s; display:flex; flex-direction:column;
+    min-width:0; /* let the card shrink so the strip scrolls instead of widening the grid */
   }
   .proj-card:hover{border-color:var(--border-strong); transform:translateY(-4px); box-shadow:0 26px 50px -30px rgba(62,232,168,0.3);}
 
   /* screenshot carousel */
-  .strip-wrap{position:relative; border-radius:14px; overflow:hidden; background:#0b100e; border:1px solid rgba(255,255,255,0.07);}
+  .strip-wrap{position:relative; min-width:0; border-radius:14px; overflow:hidden; background:#0b100e; border:1px solid rgba(255,255,255,0.07);}
   .shot-strip{
     display:flex; gap:8px; height:300px; padding:8px; overflow-x:auto; overscroll-behavior-x:contain;
     scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none;
@@ -239,24 +240,27 @@
   .strip-nav[hidden]{display:none;}
   .strip-prev{left:10px;}
   .strip-next{right:10px;}
-  .strip-dots{display:flex; gap:6px; justify-content:center; margin:14px 0 4px;}
+  .strip-dots{display:flex; gap:6px; justify-content:center; margin:14px 0 4px; min-height:8px;}
   .strip-dot{
     width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2);
     border:none; padding:0; cursor:pointer; transition:background .15s, transform .15s;
   }
   .strip-dot.on{background:var(--mint); transform:scale(1.35);}
 
-  /* fallback mock for projects without screenshots */
-  .phone-mock{
-    background:linear-gradient(155deg, var(--pc1), var(--pc2)); border-radius:14px; height:300px; position:relative;
-    display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid rgba(255,255,255,0.08);
+  /* placeholder tiles share the strip's exact rhythm so every card matches */
+  .shot-ph{
+    height:100%; aspect-ratio:473/1024; flex:0 0 auto; border-radius:10px;
+    background:linear-gradient(155deg, var(--pc1), var(--pc2));
+    border:1px solid rgba(255,255,255,0.08);
+    display:flex; align-items:center; justify-content:center;
   }
-  .phone-mock .live-badge{
-    position:absolute; top:12px; left:12px; font-family:'JetBrains Mono',monospace; font-size:9.5px;
-    background:rgba(0,0,0,0.35); color:#fff; padding:3px 8px; border-radius:999px; display:flex; align-items:center; gap:5px;
+  .shot-ph svg{width:44px; height:44px;}
+  .live-badge{
+    position:absolute; top:16px; left:16px; z-index:2; font-family:'JetBrains Mono',monospace; font-size:9.5px;
+    background:rgba(4,8,7,0.6); color:#fff; padding:3px 9px; border-radius:999px;
+    display:flex; align-items:center; gap:5px; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.14);
   }
-  .phone-mock .live-badge::before{content:""; width:5px; height:5px; border-radius:50%; background:#4ADE80;}
-  .phone-mock .glyph{width:58px; height:58px; opacity:0.92;}
+  .live-badge::before{content:""; width:5px; height:5px; border-radius:50%; background:#4ADE80;}
 
   /* LIGHTBOX */
   .lightbox{
@@ -346,7 +350,7 @@
     .about-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:repeat(2,1fr);}
     .proj-grid{grid-template-columns:1fr;}
-    .shot-strip, .phone-mock{height:260px;}
+    .shot-strip{height:260px;}
     section{padding:64px 0;}
     .hero{padding:80px 0 64px;}
     .wrap{padding:0 22px;}
@@ -757,10 +761,14 @@
         ${p.shots.map((s, i) => `<button class="strip-dot${i === 0 ? ' on' : ''}" data-i="${i}"
             aria-label="Screenshot ${i + 1}: ${s.label}"></button>`).join('')}
       </div>`
-      : `<div class="phone-mock" style="--pc1:${p.pc1}; --pc2:${p.pc2}">
+      : `<div class="strip-wrap" style="--pc1:${p.pc1}; --pc2:${p.pc2}">
            <span class="live-badge">Live</span>
-           <svg class="glyph" viewBox="0 0 24 24">${p.glyph}</svg>
-         </div>`;
+           <div class="shot-strip" aria-hidden="true">
+             ${[0.92, 0.5, 0.3, 0.18].map(o =>
+               `<div class="shot-ph"><svg viewBox="0 0 24 24" style="opacity:${o}">${p.glyph}</svg></div>`).join('')}
+           </div>
+         </div>
+         <div class="strip-dots" aria-hidden="true"></div>`;
 
     card.innerHTML = `
       ${media}
@@ -787,18 +795,27 @@
       return first ? first.getBoundingClientRect().width + 8 : strip.clientWidth * 0.6;
     };
 
+    const maxScroll = () => strip.scrollWidth - strip.clientWidth;
+
+    // Dots span the whole scroll range, so the first and last are always reachable
+    // even when several screenshots are visible at once.
     const sync = () => {
-      const i = Math.round(strip.scrollLeft / step());
+      const max = maxScroll();
+      const ratio = max > 0 ? strip.scrollLeft / max : 0;
+      const i = Math.round(ratio * (dots.length - 1));
       dots.forEach((d, n) => d.classList.toggle('on', n === i));
       prev.hidden = strip.scrollLeft < 8;
-      next.hidden = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 8;
+      next.hidden = strip.scrollLeft >= max - 8;
     };
 
-    prev.addEventListener('click', () => strip.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
-    next.addEventListener('click', () => strip.scrollBy({ left: step() * 2, behavior: 'smooth' }));
+    prev.addEventListener('click', () => { pause(); strip.scrollBy({ left: -step() * 2, behavior: 'smooth' }); });
+    next.addEventListener('click', () => { pause(); strip.scrollBy({ left: step() * 2, behavior: 'smooth' }); });
     dots.forEach(d => d.addEventListener('click', () => {
-      strip.scrollTo({ left: step() * Number(d.dataset.i), behavior: 'smooth' });
+      pause();
+      const i = Number(d.dataset.i);
+      strip.scrollTo({ left: maxScroll() * (i / (dots.length - 1)), behavior: 'smooth' });
     }));
+    addEventListener('resize', sync, { passive: true });
     strip.addEventListener('scroll', () => {
       clearTimeout(strip._t);
       strip._t = setTimeout(sync, 60);
@@ -808,6 +825,38 @@
       img.addEventListener('load', sync, { once: true });
     });
     requestAnimationFrame(sync);
+
+    // Auto-advance: only while the card is on screen and the user isn't interacting.
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let timer = null, visible = false;
+
+    const advance = () => {
+      if (lb.classList.contains('open') || document.hidden) return;
+      const atEnd = strip.scrollLeft >= maxScroll() - 8;
+      strip.scrollTo({ left: atEnd ? 0 : strip.scrollLeft + step(), behavior: 'smooth' });
+    };
+    const play = () => {
+      if (timer || calm.matches || !visible) return;
+      timer = setInterval(advance, 2800);
+    };
+    function pause() {
+      clearInterval(timer);
+      timer = null;
+    }
+    const resumeLater = () => { pause(); setTimeout(play, 4000); };
+
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      visible ? play() : pause();
+    }, { threshold: 0.35 }).observe(card);
+
+    card.addEventListener('mouseenter', pause);
+    card.addEventListener('mouseleave', play);
+    card.addEventListener('focusin', pause);
+    card.addEventListener('focusout', play);
+    strip.addEventListener('pointerdown', resumeLater);
+    document.addEventListener('visibilitychange', () => document.hidden ? pause() : play());
+    calm.addEventListener('change', () => calm.matches ? pause() : play());
   }
 
   // Lightbox gallery
