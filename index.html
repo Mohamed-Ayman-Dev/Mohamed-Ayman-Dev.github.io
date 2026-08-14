@@ -209,28 +209,101 @@
   .skill-card li::before{content:"•"; position:absolute; left:0; color:var(--mint);}
 
   /* PROJECTS */
-  .proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .proj-card{background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:22px; transition:all .18s;}
-  .proj-card:hover{border-color:var(--border-strong); transform:translateY(-4px); box-shadow:0 26px 50px -30px rgba(62,232,168,0.3);}
-  .phone-mock{
-    background:linear-gradient(155deg, var(--pc1), var(--pc2)); border-radius:20px; height:200px; position:relative;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:18px; overflow:hidden;
-    border:1px solid rgba(255,255,255,0.08);
+  .proj-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .proj-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px;
+    transition:border-color .18s, transform .18s, box-shadow .18s; display:flex; flex-direction:column;
   }
-  .phone-mock img{width:100%; height:100%; object-fit:cover; object-position:top center;}
-  .phone-mock.has-shot{background:#0c1210;}
+  .proj-card:hover{border-color:var(--border-strong); transform:translateY(-4px); box-shadow:0 26px 50px -30px rgba(62,232,168,0.3);}
+
+  /* screenshot carousel */
+  .strip-wrap{position:relative; border-radius:14px; overflow:hidden; background:#0b100e; border:1px solid rgba(255,255,255,0.07);}
+  .shot-strip{
+    display:flex; gap:8px; height:300px; padding:8px; overflow-x:auto; overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none;
+  }
+  .shot-strip::-webkit-scrollbar{display:none;}
+  .shot-strip img{
+    height:100%; width:auto; flex:0 0 auto; border-radius:10px; object-fit:cover;
+    scroll-snap-align:start; cursor:zoom-in; transition:opacity .15s;
+  }
+  .shot-strip img:hover{opacity:0.88;}
+  .strip-nav{
+    position:absolute; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%;
+    background:rgba(7,12,10,0.82); border:1px solid rgba(255,255,255,0.18); color:#fff; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; backdrop-filter:blur(6px);
+    transition:background .15s, opacity .2s, color .15s;
+  }
+  .strip-nav svg{width:16px; height:16px;}
+  .strip-nav:hover{background:var(--mint); color:#04140d; border-color:var(--mint);}
+  .strip-nav[hidden]{display:none;}
+  .strip-prev{left:10px;}
+  .strip-next{right:10px;}
+  .strip-dots{display:flex; gap:6px; justify-content:center; margin:14px 0 4px;}
+  .strip-dot{
+    width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2);
+    border:none; padding:0; cursor:pointer; transition:background .15s, transform .15s;
+  }
+  .strip-dot.on{background:var(--mint); transform:scale(1.35);}
+
+  /* fallback mock for projects without screenshots */
+  .phone-mock{
+    background:linear-gradient(155deg, var(--pc1), var(--pc2)); border-radius:14px; height:300px; position:relative;
+    display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid rgba(255,255,255,0.08);
+  }
   .phone-mock .live-badge{
-    position:absolute; top:10px; left:10px; font-family:'JetBrains Mono',monospace; font-size:9.5px;
+    position:absolute; top:12px; left:12px; font-family:'JetBrains Mono',monospace; font-size:9.5px;
     background:rgba(0,0,0,0.35); color:#fff; padding:3px 8px; border-radius:999px; display:flex; align-items:center; gap:5px;
   }
   .phone-mock .live-badge::before{content:""; width:5px; height:5px; border-radius:50%; background:#4ADE80;}
   .phone-mock .glyph{width:58px; height:58px; opacity:0.92;}
-  .proj-name{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600; margin-bottom:2px;}
-  .proj-roles{font-size:12px; color:var(--muted); margin-bottom:10px;}
-  .proj-stat{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--mint); margin-bottom:10px; display:block;}
-  .proj-desc{font-size:13.5px; color:#B9C2BC; margin-bottom:16px;}
-  .proj-tags{display:flex; flex-wrap:wrap; gap:6px;}
-  .proj-tags span{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); border:1px solid var(--border); padding:3px 9px; border-radius:6px;}
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed; inset:0; z-index:100; background:rgba(4,8,7,0.95); backdrop-filter:blur(8px);
+    display:none; align-items:center; justify-content:center; padding:24px;
+  }
+  .lightbox.open{display:flex;}
+  .lb-stage{display:flex; flex-direction:column; align-items:center; gap:16px; max-height:100%;}
+  .lb-img{
+    max-height:76vh; max-width:min(400px,84vw); border-radius:18px; display:block;
+    border:1px solid rgba(255,255,255,0.1); box-shadow:0 40px 90px -30px rgba(0,0,0,0.8);
+  }
+  .lb-caption{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); text-align:center;}
+  .lb-caption b{color:var(--mint); font-weight:600;}
+  .lb-dots{display:flex; gap:7px;}
+  .lb-dot{
+    width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.22);
+    border:none; padding:0; cursor:pointer; transition:background .15s, transform .15s;
+  }
+  .lb-dot.on{background:var(--mint); transform:scale(1.3);}
+  .lb-btn{
+    position:absolute; width:44px; height:44px; border-radius:50%; cursor:pointer;
+    background:rgba(14,22,19,0.9); border:1px solid var(--border-strong); color:var(--mint);
+    display:flex; align-items:center; justify-content:center; transition:background .15s, transform .15s;
+  }
+  .lb-btn:hover{background:var(--mint-dim); transform:scale(1.06);}
+  .lb-btn svg{width:20px; height:20px;}
+  .lb-prev{left:24px;}
+  .lb-next{right:24px;}
+  .lb-close{top:24px; right:24px;}
+  @media (max-width:600px){
+    .lb-prev{left:10px;} .lb-next{right:10px;}
+    .lb-btn{width:38px; height:38px;}
+    .lb-img{max-height:66vh;}
+  }
+  .proj-name{font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:12px 0 4px;}
+  .proj-roles{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--mint); margin-bottom:12px; letter-spacing:0.02em;}
+  .proj-desc{font-size:13.5px; color:#B9C2BC; margin:0 0 16px;}
+  .proj-desc b{color:var(--text); font-weight:600;}
+  .proj-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto;}
+  .proj-tags span{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
+  .proj-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+  .proj-links a{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted);
+    border:1px solid var(--border); padding:7px 12px; border-radius:8px; transition:all .15s;
+  }
+  .proj-links a:hover{color:var(--mint); border-color:var(--border-strong); background:var(--mint-dim);}
 
   /* EDUCATION */
   .edu-card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:26px 28px; max-width:640px; margin:0 auto;}
@@ -273,6 +346,7 @@
     .about-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:repeat(2,1fr);}
     .proj-grid{grid-template-columns:1fr;}
+    .shot-strip, .phone-mock{height:260px;}
     section{padding:64px 0;}
     .hero{padding:80px 0 64px;}
     .wrap{padding:0 22px;}
@@ -578,6 +652,23 @@
 
 </main>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project screenshots">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous screenshot">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next screenshot">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="lb-stage">
+    <img class="lb-img" id="lbImg" alt="">
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-dots" id="lbDots"></div>
+  </div>
+</div>
+
 <button class="to-top" id="toTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
@@ -589,10 +680,18 @@
   // falls back to the colored gradient + glyph automatically (onerror).
   const projects = [
     { name:"Invastro", roles:"Idea Owner & Investor apps", pc1:"#0a1a3d", pc2:"#0d2a6b",
-      stat:"Live on App Store & Google Play",
+      stat:"Live on the App Store & Google Play",
       desc:"A platform connecting idea owners with investors — post a project, define funding needs, browse and message investors directly, all in one trusted marketplace.",
       tags:["Flutter","Marketplace","Chat"],
-      img:"assets/invastro.jpg",
+      coverPos:"center 46%",
+      shots:[
+        { src:"assets/invastro-2-browse.png", label:"Browse & filter opportunities" },
+        { src:"assets/invastro-3-detail.png", label:"Opportunity detail & capital" },
+        { src:"assets/invastro-6-chat.png",   label:"Direct chat with owners" },
+        { src:"assets/invastro-4-create.png", label:"Create a listing" },
+        { src:"assets/invastro-5-manage.png", label:"Manage listings & views" },
+        { src:"assets/invastro-1-splash.png", label:"Splash & branding" },
+      ],
       glyph:'<path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.6" fill="none"/><path d="M12 8v8M8.5 10v4M15.5 10v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
     { name:"Vero", roles:"Customer & Provider apps", pc1:"#0f2e29", pc2:"#123d34",
       stat:"13,800+ iOS · 1,000+ Android",
@@ -639,27 +738,120 @@
   ];
 
   const grid = document.getElementById('projectGrid');
+  const arrow = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+    stroke-linecap="round" stroke-linejoin="round"><path d="${d === 'prev' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'}"/></svg>`;
+
   projects.forEach(p => {
-    const card = document.createElement('div');
+    const card = document.createElement('article');
     card.className = 'proj-card';
-    const fallback = `<span class="live-badge">Live</span><svg class="glyph" viewBox="0 0 24 24">${p.glyph}</svg>`;
-    card.innerHTML = `
-      <div class="phone-mock" style="--pc1:${p.pc1}; --pc2:${p.pc2}">
-        ${p.img ? `<img src="${p.img}" alt="${p.name} app screenshot" loading="lazy">` : fallback}
+
+    const media = p.shots ? `
+      <div class="strip-wrap">
+        <div class="shot-strip">
+          ${p.shots.map((s, i) => `<img src="${s.src}" alt="${p.name} — ${s.label}" loading="lazy" data-i="${i}">`).join('')}
+        </div>
+        <button class="strip-nav strip-prev" aria-label="Previous screenshots" hidden>${arrow('prev')}</button>
+        <button class="strip-nav strip-next" aria-label="More screenshots">${arrow('next')}</button>
       </div>
-      <div class="proj-name">${p.name}</div>
+      <div class="strip-dots">
+        ${p.shots.map((s, i) => `<button class="strip-dot${i === 0 ? ' on' : ''}" data-i="${i}"
+            aria-label="Screenshot ${i + 1}: ${s.label}"></button>`).join('')}
+      </div>`
+      : `<div class="phone-mock" style="--pc1:${p.pc1}; --pc2:${p.pc2}">
+           <span class="live-badge">Live</span>
+           <svg class="glyph" viewBox="0 0 24 24">${p.glyph}</svg>
+         </div>`;
+
+    card.innerHTML = `
+      ${media}
+      <h3 class="proj-name">${p.name}</h3>
       <div class="proj-roles">${p.roles}</div>
-      <span class="proj-stat">${p.stat}</span>
-      <p class="proj-desc">${p.desc}</p>
-      <div class="proj-tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+      <p class="proj-desc">${p.stat ? `<b>${p.stat}.</b> ` : ''}${p.desc}</p>
+      <div class="proj-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
+      ${p.links ? `<div class="proj-links">${p.links.map(l =>
+        `<a href="${l.url}" target="_blank" rel="noopener">↗ ${l.label}</a>`).join('')}</div>` : ''}
     `;
-    const imgEl = card.querySelector('.phone-mock img');
-    if (imgEl) {
-      const mock = card.querySelector('.phone-mock');
-      imgEl.addEventListener('load', () => mock.classList.add('has-shot'));
-      imgEl.addEventListener('error', () => { mock.innerHTML = fallback; });
-    }
+
+    if (p.shots) setupCarousel(card, p);
     grid.appendChild(card);
+  });
+
+  function setupCarousel(card, project) {
+    const strip = card.querySelector('.shot-strip');
+    const dots = [...card.querySelectorAll('.strip-dot')];
+    const prev = card.querySelector('.strip-prev');
+    const next = card.querySelector('.strip-next');
+
+    const step = () => {
+      const first = strip.querySelector('img');
+      return first ? first.getBoundingClientRect().width + 8 : strip.clientWidth * 0.6;
+    };
+
+    const sync = () => {
+      const i = Math.round(strip.scrollLeft / step());
+      dots.forEach((d, n) => d.classList.toggle('on', n === i));
+      prev.hidden = strip.scrollLeft < 8;
+      next.hidden = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 8;
+    };
+
+    prev.addEventListener('click', () => strip.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
+    next.addEventListener('click', () => strip.scrollBy({ left: step() * 2, behavior: 'smooth' }));
+    dots.forEach(d => d.addEventListener('click', () => {
+      strip.scrollTo({ left: step() * Number(d.dataset.i), behavior: 'smooth' });
+    }));
+    strip.addEventListener('scroll', () => {
+      clearTimeout(strip._t);
+      strip._t = setTimeout(sync, 60);
+    }, { passive: true });
+    strip.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(project, Number(img.dataset.i)));
+      img.addEventListener('load', sync, { once: true });
+    });
+    requestAnimationFrame(sync);
+  }
+
+  // Lightbox gallery
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbDots = document.getElementById('lbDots');
+  let lbShots = [], lbIndex = 0, lbTitle = '';
+
+  function renderShot(i) {
+    lbIndex = (i + lbShots.length) % lbShots.length;
+    const shot = lbShots[lbIndex];
+    lbImg.src = shot.src;
+    lbImg.alt = `${lbTitle} — ${shot.label}`;
+    lbCaption.innerHTML = `<b>${lbTitle}</b> · ${shot.label} · ${lbIndex + 1}/${lbShots.length}`;
+    lbDots.querySelectorAll('.lb-dot').forEach((d, n) => d.classList.toggle('on', n === lbIndex));
+  }
+
+  function openLightbox(project, index) {
+    lbShots = project.shots;
+    lbTitle = project.name;
+    lbDots.innerHTML = lbShots.map((s, n) =>
+      `<button class="lb-dot" aria-label="Screenshot ${n + 1}: ${s.label}"></button>`).join('');
+    lbDots.querySelectorAll('.lb-dot').forEach((d, n) => d.addEventListener('click', () => renderShot(n)));
+    renderShot(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lbClose').focus();
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => renderShot(lbIndex - 1));
+  document.getElementById('lbNext').addEventListener('click', () => renderShot(lbIndex + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') renderShot(lbIndex - 1);
+    if (e.key === 'ArrowRight') renderShot(lbIndex + 1);
   });
 
   // Scroll reveal
