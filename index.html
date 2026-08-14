@@ -220,7 +220,7 @@
   /* screenshot carousel */
   .strip-wrap{position:relative; min-width:0; border-radius:14px; overflow:hidden; background:#0b100e; border:1px solid rgba(255,255,255,0.07);}
   .shot-strip{
-    display:flex; gap:8px; height:300px; padding:8px; overflow-x:auto; overscroll-behavior-x:contain;
+    display:flex; gap:10px; height:340px; padding:10px; overflow-x:auto; overscroll-behavior-x:contain;
     scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none;
   }
   .shot-strip::-webkit-scrollbar{display:none;}
@@ -350,11 +350,13 @@
     .about-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:repeat(2,1fr);}
     .proj-grid{grid-template-columns:1fr;}
-    .shot-strip{height:260px;}
     section{padding:64px 0;}
     .hero{padding:80px 0 64px;}
     .wrap{padding:0 22px;}
     .nav-inner{padding:16px 22px;}
+  }
+  @media (max-width:560px){
+    .shot-strip{height:290px;}
   }
   @media (max-width:480px){
     .skills-grid{grid-template-columns:1fr;}
