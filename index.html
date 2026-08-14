@@ -151,11 +151,16 @@
   .about-body p{color:#B9C2BC; font-size:15.5px; margin:0 0 16px;}
   .about-chips{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px;}
   .about-chip{
-    display:flex; align-items:center; gap:10px; background:var(--panel); border:1px solid var(--border);
-    border-radius:11px; padding:14px 16px; font-size:13.5px; color:var(--text); transition:border-color .15s;
+    display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--border);
+    border-radius:11px; padding:14px 16px; color:var(--text); transition:border-color .15s;
   }
   .about-chip:hover{border-color:var(--border-strong);}
-  .about-chip svg{width:17px; height:17px; color:var(--mint); flex-shrink:0;}
+  .about-chip svg{width:19px; height:19px; color:var(--mint); flex-shrink:0;}
+  .about-chip strong{
+    display:block; font-family:'Space Grotesk',sans-serif; font-size:15.5px;
+    font-weight:600; color:var(--mint); line-height:1.25;
+  }
+  .about-chip span{display:block; font-size:12px; color:var(--muted); line-height:1.35;}
   .architecture-visual{
     background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:28px;
     box-shadow:0 30px 70px -40px rgba(62,232,168,0.25);
@@ -354,14 +359,26 @@
         <p>I moved into Flutter development after that and shipped over twenty production apps since, almost all for Saudi-based clients — car wash and on-demand platforms, e-commerce marketplaces, booking systems, and a large-scale social app with real-time chat and an in-app camera.</p>
         <p>I build on Provider with dependency injection in production, and I've been going deep on feature-first Clean Architecture — BLoC and Riverpod, abstract repositories, a typed result pattern for networking — converting real projects to it, not just reading about it.</p>
         <div class="about-chips">
-          <div class="about-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Clean Architecture</div>
-          <div class="about-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>BLoC / Cubit</div>
-          <div class="about-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Feature-First</div>
-          <div class="about-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4v16h16"/><path d="M4 14l4-4 4 3 8-8"/></svg>REST APIs</div>
+          <div class="about-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg>
+            <div><strong>3.5+ years</strong><span>shipping Flutter</span></div>
+          </div>
+          <div class="about-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3" stroke-linecap="round"/></svg>
+            <div><strong>20+ apps</strong><span>shipped to production</span></div>
+          </div>
+          <div class="about-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4"/><path d="M4 18h16"/></svg>
+            <div><strong>30K+ downloads</strong><span>across store listings</span></div>
+          </div>
+          <div class="about-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
+            <div><strong>Saudi market</strong><span>clients since 2021</span></div>
+          </div>
         </div>
       </div>
       <div class="architecture-visual reveal">
-        <div class="arch-title">// feature-first structure</div>
+        <div class="arch-title">// clean architecture layers</div>
         <div class="arch-layer"><div class="l-name">Presentation</div><div class="l-sub">Cubit / BLoC · Screens · Widgets</div></div>
         <div class="arch-arrow">↓ depends on</div>
         <div class="arch-layer"><div class="l-name">Domain</div><div class="l-sub">UseCases · Abstract Repository</div></div>
