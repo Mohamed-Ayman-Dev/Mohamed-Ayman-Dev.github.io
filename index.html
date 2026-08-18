@@ -6,20 +6,20 @@
 <title>Mohamed Ayman — Senior Flutter Developer</title>
 
 <!-- SEO -->
-<meta name="description" content="Mohamed Ayman — Senior Flutter Developer with 3.5+ years building production mobile apps. 20+ apps shipped for Saudi-based companies: marketplaces, on-demand platforms, and large-scale social apps.">
+<meta name="description" content="Mohamed Ayman — Senior Flutter Developer in Egypt. 20+ production apps across marketplaces, booking, social, and field service. Clean Architecture, BLoC, payments — from estimate to store release.">
 <meta name="author" content="Mohamed Ayman">
-<meta name="keywords" content="Flutter Developer, Senior Flutter Developer, Mobile Developer, Dart, BLoC, Clean Architecture, Saudi Arabia, Remote">
+<meta name="keywords" content="Flutter Developer, Senior Flutter Developer, Mobile Developer, Dart, Egypt, Remote">
 <link rel="canonical" href="https://mohamed-ayman-dev.github.io/">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mohamed Ayman — Senior Flutter Developer">
-<meta property="og:description" content="3.5+ years building production Flutter apps. 20+ apps shipped — marketplaces, on-demand platforms, and a large-scale social app.">
+<meta property="og:description" content="Senior Flutter developer. 20+ production apps — marketplaces, booking, social, field service. Open to remote, relocate, hybrid, or on-site.">
 <meta property="og:url" content="https://mohamed-ayman-dev.github.io/">
 <meta property="og:image" content="https://mohamed-ayman-dev.github.io/assets/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mohamed Ayman — Senior Flutter Developer">
-<meta name="twitter:description" content="3.5+ years building production Flutter apps. 20+ apps shipped for Saudi-based companies.">
+<meta name="twitter:description" content="Senior Flutter developer. 20+ production apps across marketplaces, booking, social, and field service.">
 
 <!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070c0a'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%233EE8A8' font-family='monospace' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
@@ -40,6 +40,7 @@
     "https://github.com/Mohamed-Ayman-Dev",
     "https://linkedin.com/in/mohamed-ayman-devv"
   ],
+  "description": "Senior Flutter developer based in Egypt. 20+ production apps across marketplaces, booking, social, and field service — from estimate to store release.",
   "knowsAbout": ["Flutter", "Dart", "Mobile Development", "Clean Architecture", "BLoC"]
 }
 </script>
@@ -86,9 +87,16 @@
   /* NAV */
   header.nav{position:sticky; top:0; z-index:60; background:rgba(7,12,10,0.82); backdrop-filter:blur(12px); border-bottom:1px solid var(--border);}
   .nav-inner{max-width:1180px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;}
-  .logo{font-family:'JetBrains Mono',monospace; font-size:17px; color:var(--mint); letter-spacing:0.02em;}
-  .logo .cursor{display:inline-block; width:8px; height:16px; background:var(--mint); margin-left:3px; animation:blink 1s step-end infinite; vertical-align:-2px;}
-  @keyframes blink{50%{opacity:0;}}
+  .logo{
+    font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; color:var(--text);
+    letter-spacing:-0.02em; position:relative; padding-bottom:3px;
+  }
+  .logo::after{
+    content:''; position:absolute; left:0; bottom:0; height:1.5px; width:0; background:var(--mint);
+    transition:width .25s ease;
+  }
+  .logo:hover{color:var(--mint);}
+  .logo:hover::after{width:100%;}
   .nav-links{display:flex; gap:30px; list-style:none; margin:0; padding:0; font-size:14px; color:var(--muted);}
   .nav-links a{transition:color .15s;}
   .nav-links a:hover, .nav-links a.active{color:var(--mint);}
@@ -112,12 +120,15 @@
     color:var(--mint); background:var(--mint-dim); border:1px solid var(--border-strong);
     padding:7px 16px; border-radius:999px; margin-bottom:28px;
   }
-  .pill-dot{width:6px; height:6px; border-radius:50%; background:var(--mint); animation:pulse 2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.3;}}
-  .hero h1{font-size:clamp(34px,5.4vw,60px); font-weight:700; color:var(--mint); margin:0 0 6px; line-height:1.08;
-    text-shadow:0 0 40px rgba(62,232,168,0.25);}
+  .pill-dot{width:6px; height:6px; border-radius:50%; background:var(--mint); animation:pulse 2.8s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.45;}}
+  .hero h1{
+    font-size:clamp(34px,5.4vw,60px); font-weight:700; color:var(--mint); margin:0 0 6px; line-height:1.08;
+    letter-spacing:-0.03em;
+    animation:titleIn .9s cubic-bezier(.16,1,.3,1) .12s both;
+  }
   .hero h2{font-size:clamp(18px,2.4vw,24px); font-weight:500; color:var(--text); margin:0 0 22px;}
-  .hero p{max-width:620px; margin:0 auto 34px; color:var(--muted); font-size:16px;}
+  .hero p{max-width:720px; margin:0 auto 34px; color:var(--muted); font-size:16px; line-height:1.65;}
   .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:34px;}
   .btn{
     display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
@@ -125,7 +136,7 @@
   }
   .btn:active{transform:scale(0.96);}
   .btn-primary{background:var(--mint); color:#04140d;}
-  .btn-primary:hover{box-shadow:0 0 26px rgba(62,232,168,0.4);}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 18px rgba(62,232,168,0.18);}
   .btn-ghost{background:transparent; border-color:var(--border-strong); color:var(--mint);}
   .btn-ghost:hover{background:var(--mint-dim);}
   .btn-text{color:var(--muted); font-size:14.5px; display:inline-flex; align-items:center; gap:6px; padding:13px 6px;}
@@ -142,13 +153,29 @@
   section{padding:90px 0;}
   .section-title{text-align:center; margin-bottom:56px;}
   .section-title h2{font-size:clamp(26px,3.2vw,34px); color:var(--mint); font-weight:700; margin:0 0 12px;}
+  .section-lead{color:var(--muted); font-size:15px; max-width:560px; margin:16px auto 0; line-height:1.6;}
   .section-rule{width:70px; height:2px; background:linear-gradient(90deg,transparent,var(--mint),transparent); margin:0 auto;}
-  .reveal{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
+  .hero > *:not(h1){animation:rise .55s ease both;}
+  .hero .pill{animation-delay:.02s;}
+  .hero h2{animation-delay:.22s;}
+  .hero p{animation-delay:.28s;}
+  .hero .cta-row{animation-delay:.34s;}
+  .hero .social-row{animation-delay:.4s;}
+  @keyframes rise{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
+  @keyframes titleIn{
+    from{opacity:0; letter-spacing:0.14em; transform:translateY(14px);}
+    to{opacity:1; letter-spacing:-0.03em; transform:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .hero > *, .hero h1{animation:none; opacity:1; transform:none; letter-spacing:-0.03em; transition:none;}
+    .pill-dot{animation:none;}
+  }
 
   /* ABOUT */
-  .about-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;}
-  .about-body p{color:#B9C2BC; font-size:15.5px; margin:0 0 16px;}
+  .about-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:start;}
+  .about-body p{color:#B9C2BC; font-size:15.5px; margin:0 0 16px; line-height:1.7;}
   .about-chips{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px;}
   .about-chip{
     display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--border);
@@ -170,7 +197,6 @@
   .arch-layer .l-name{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--mint); font-weight:600;}
   .arch-layer .l-sub{font-size:11.5px; color:var(--muted); margin-top:3px;}
   .arch-arrow{text-align:center; color:var(--border-strong); font-size:14px; margin:-4px 0 8px; font-family:'JetBrains Mono',monospace;}
-
   /* EXPERIENCE - timeline */
   .timeline{position:relative; margin-left:12px; border-left:2px solid var(--border); padding-left:0;}
   .tl-item{position:relative; padding:0 0 34px 34px;}
@@ -302,12 +328,13 @@
   .proj-desc b{color:var(--text); font-weight:600;}
   .proj-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto;}
   .proj-tags span{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
-  .proj-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+  .proj-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
   .proj-links a{
-    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted);
-    border:1px solid var(--border); padding:7px 12px; border-radius:8px; transition:all .15s;
+    font-size:12px; font-weight:500; color:var(--mint); background:var(--mint-dim);
+    border:1px solid var(--border-strong); padding:8px 13px; border-radius:8px;
+    transition:background .15s, transform .15s;
   }
-  .proj-links a:hover{color:var(--mint); border-color:var(--border-strong); background:var(--mint-dim);}
+  .proj-links a:hover{background:rgba(62,232,168,0.2); transform:translateY(-1px);}
 
   /* EDUCATION */
   .edu-card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:26px 28px; max-width:640px; margin:0 auto;}
@@ -317,7 +344,7 @@
   .edu-degree{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600;}
   .edu-school{color:var(--mint); font-size:14px; font-weight:600;}
   .edu-meta{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); margin:10px 0;}
-  .edu-note{font-size:13.5px; color:#B9C2BC;}
+  .edu-note{font-size:14px; color:#B9C2BC; line-height:1.65; margin:0;}
 
   /* CONTACT */
   .contact-card{
@@ -325,7 +352,7 @@
     box-shadow:0 30px 80px -40px rgba(62,232,168,0.2);
   }
   .contact-card h2{color:var(--mint); font-size:clamp(26px,3.6vw,38px); margin:0 0 14px; font-family:'Space Grotesk',sans-serif; font-weight:700;}
-  .contact-card p{color:var(--muted); max-width:460px; margin:0 auto 30px; font-size:15px;}
+  .contact-card p{color:var(--muted); max-width:560px; margin:0 auto 30px; font-size:15px; line-height:1.65;}
   .contact-links{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
   .contact-links a{
     font-family:'JetBrains Mono',monospace; font-size:13px; padding:11px 18px; border:1px solid var(--border-strong);
@@ -347,7 +374,7 @@
   @media (max-width:900px){
     .nav-links{display:none;}
     .nav-toggle{display:inline-flex;}
-    .about-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr; gap:28px;}
     .skills-grid{grid-template-columns:repeat(2,1fr);}
     .proj-grid{grid-template-columns:1fr;}
     section{padding:64px 0;}
@@ -374,7 +401,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#top" class="logo" aria-label="Home">&lt;M.A /&gt;<span class="cursor"></span></a>
+    <a href="#top" class="logo" aria-label="Home">Mohamed Ayman</a>
     <ul class="nav-links">
       <li><a href="#top">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -406,7 +433,7 @@
     <span class="pill"><span class="pill-dot"></span>Available for opportunities</span>
     <h1 class="display">Mohamed Ayman</h1>
     <h2>Senior Flutter Developer</h2>
-    <p>3.5+ years building production mobile apps with feature-first Clean Architecture and BLoC/Cubit. 20+ apps shipped for Saudi-based companies — marketplaces, on-demand platforms, and a large-scale social app.</p>
+    <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 20+ apps shipped for Saudi companies, across marketplaces, booking, social, and field service. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:mohamed.ayman.devv@gmail.com">✉ Contact Me</a>
       <a class="btn btn-ghost" href="#projects">View Projects ↓</a>
@@ -435,13 +462,13 @@
     </div>
     <div class="about-grid">
       <div class="about-body reveal">
-        <p>I'm a Flutter developer with 3.5+ years of production experience and more than twenty shipped apps behind me, most of them for Saudi-based companies — e-commerce marketplaces, on-demand service platforms, booking systems, and a large-scale social app with real-time chat, stories, and an in-app camera.</p>
-        <p>I build with feature-first Clean Architecture: BLoC and Cubit for state, abstract repositories that keep the domain layer free of any API detail, and a typed result pattern so every network call resolves to an explicit success or failure. I've introduced that structure on client projects that started without it, and migrated live codebases over to it without pausing feature delivery.</p>
-        <p>I came into development through QA and business analysis, and that's still the part of my process teams notice. I read a requirement the way the user will actually experience it, push back on the ambiguous parts before an estimate goes out, and catch my own edge cases before anyone else opens the build.</p>
+        <p>I'm a Flutter engineer you can hand a product to — not a single screen. I ship production apps for Saudi companies: marketplaces, salon booking, field service, social with live video and AR, spare-parts RFQ, custom commerce. Different domains, different features, same bar: it has to work on a real store listing.</p>
+        <p>I build with feature-first Clean Architecture and BLoC/Cubit so the next person on the team can extend the work. Payments, wallets, chat, maps, KYC, tracking, and in-app cameras are things I've already wired — Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay — not a demo checkout.</p>
+        <p>On a team I close the loop: unclear ticket → something you can ship → crash reports and the next slice. You get someone who talks to the client without losing the engineer, and who stays after release.</p>
         <div class="about-chips">
           <div class="about-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg>
-            <div><strong>3.5+ years</strong><span>shipping Flutter</span></div>
+            <div><strong>3.5+ years</strong><span>production Flutter</span></div>
           </div>
           <div class="about-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3" stroke-linecap="round"/></svg>
@@ -453,7 +480,7 @@
           </div>
           <div class="about-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
-            <div><strong>Saudi market</strong><span>clients since 2021</span></div>
+            <div><strong>Based in Egypt</strong><span>remote · relocate · hybrid · on-site</span></div>
           </div>
         </div>
       </div>
@@ -491,9 +518,11 @@
             <span>📍 Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Sole developer responsible for Wady's entire mobile portfolio — new builds and maintenance across all active client projects.</li>
-            <li>Join daily developer standups and client meetings directly, owning technical scope, estimates and timelines.</li>
-            <li>Introduced feature-first Clean Architecture on a new client project, with abstract repositories and a typed API result pattern.</li>
+            <li>Own the Flutter side of Wady client apps from estimate through store release, then keep the listing live.</li>
+            <li>Magnet — company and freelancer shops with size/color and made-to-measure requests; merchants accept or reject, then waiting → preparing → out for delivery, plus returns.</li>
+            <li>GTech — spare-parts RFQ: photo/spec requests, per-item bids, then pickup or courier tracking.</li>
+            <li>Invastro — idea owners and investors list deals; filter by city, sector, and capital, then chat in-app.</li>
+            <li>Warsha Station — workshop storefronts for services, parts, and rental; vendors pass KYC, run branches/staff, and redeem jobs by QR.</li>
           </ul>
           <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Clean Architecture</span><span class="tag">Client-facing</span></div>
         </div>
@@ -514,10 +543,9 @@
             <span>📍 Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Senior technical point of contact on a client's social platform app — stories, real-time chat, groups, subscriptions, in-app camera.</li>
+            <li>Senior technical point of contact on a client's social platform app — stories, real-time chat, groups, subscriptions, an in-app camera, and paid creator video sessions.</li>
             <li>Split feature work across a 3-developer Flutter team and held final say on technical decisions.</li>
-            <li>Evaluated third-party AR/camera vendors after a provider dropped support, presenting cost and technical trade-offs directly to the client.</li>
-            <li>Applied feature-first Clean Architecture with abstract repositories and a typed API result pattern; introduced BLoC/Cubit alongside the existing Provider codebase.</li>
+            <li>Evaluated third-party AR/camera-filter vendors after the client discontinued the existing SDK over cost, presenting technical and cost trade-offs directly to the client.</li>
           </ul>
           <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC/Cubit</span><span class="tag">Clean Architecture</span><span class="tag">Client-facing</span></div>
         </div>
@@ -538,10 +566,10 @@
             <span>📍 Riyadh, Saudi Arabia</span>
           </div>
           <ul class="tl-list">
-            <li>Delivered 10+ production apps spanning marketplace, on-demand service, and booking platforms.</li>
-            <li>Built multi-role platforms — Customer, Driver/Captain, Merchant — serving thousands of active users across Saudi Arabia.</li>
-            <li>Integrated Mada, Visa, Tabby, Tamara and HyperPay, plus in-app wallet systems.</li>
-            <li>Owned full feature lifecycle: estimation, development, store deployment, and post-release maintenance.</li>
+            <li>Shipped 10+ production apps and kept them live — store listings, payments, and the features each product actually needed.</li>
+            <li>Vero — car wash and AC wash; gift the visit; packages and wallet/Mada; providers run a stepper with before/after photos.</li>
+            <li>Glow Up — men’s and women’s salon and spa; timed services then a barber; shops accept or reject, add extras, and withdraw.</li>
+            <li>Integrated Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets across those products.</li>
           </ul>
           <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Multi-role</span></div>
         </div>
@@ -562,8 +590,8 @@
             <span>📍 Riyadh, Saudi Arabia</span>
           </div>
           <ul class="tl-list">
-            <li>Owned analysis, QA and delivery coordination across every client project, as the sole operations point of contact.</li>
-            <li>Tracked tasks in Trello, tested each release, and communicated directly with clients on requirements and progress.</li>
+            <li>Single client contact: turned asks into tickets the team could build, then tested the release before it went out.</li>
+            <li>Kept scope and progress visible so engineering wasn’t guessing.</li>
           </ul>
           <div class="tag-row"><span class="tag">QA</span><span class="tag">Trello</span><span class="tag">Client Comms</span></div>
         </div>
@@ -580,8 +608,8 @@
     </div>
     <div class="skills-grid reveal">
       <div class="skill-card">
-        <div class="skill-head">Languages</div>
-        <ul><li>Dart</li></ul>
+        <div class="skill-head">Language &amp; SDK</div>
+        <ul><li>Dart</li><li>Flutter</li></ul>
       </div>
       <div class="skill-card">
         <div class="skill-head">State Management</div>
@@ -593,7 +621,7 @@
       </div>
       <div class="skill-card">
         <div class="skill-head">Networking &amp; APIs</div>
-        <ul><li>REST APIs</li><li>ApiResult&lt;T&gt; pattern</li><li>Deep Linking</li></ul>
+        <ul><li>REST APIs</li><li>Deep Linking</li></ul>
       </div>
       <div class="skill-card">
         <div class="skill-head">Firebase Services</div>
@@ -619,6 +647,7 @@
     <div class="section-title reveal">
       <h2 class="display">Projects</h2>
       <div class="section-rule"></div>
+      <p class="section-lead">Client and store apps — marketplaces, booking, social, and field service. Different products, different features.</p>
     </div>
     <div class="proj-grid" id="projectGrid"></div>
   </section>
@@ -638,7 +667,7 @@
         </div>
       </div>
       <div class="edu-meta">📅 2018 — 2021 · 📍 Cairo, Egypt</div>
-      <p class="edu-note">Faculty of Arts. Came to software development through analysis and QA before transitioning fully into Flutter engineering.</p>
+      <p class="edu-note">Helwan University. Flutter is the career; this is the degree.</p>
     </div>
   </section>
 
@@ -646,7 +675,7 @@
   <section id="contact">
     <div class="contact-card reveal">
       <h2 class="display">Let's build something that ships.</h2>
-      <p>Open to remote Senior Flutter roles, especially teams building for the Saudi market. Reply's usually same-day.</p>
+      <p>Open to Senior Flutter roles — remote, hybrid, relocate, or on-site. If you need someone who can own the mobile product from a messy brief to a live listing, start here. I usually reply the same day.</p>
       <div class="contact-links">
         <a href="mailto:mohamed.ayman.devv@gmail.com">✉ mohamed.ayman.devv@gmail.com</a>
         <a href="tel:+201146574367">☎ +20 114 657 4367</a>
@@ -685,24 +714,15 @@
   // Project screenshots live in assets/. If a file is missing, the card
   // falls back to the colored gradient + glyph automatically (onerror).
   const projects = [
-    { name:"Invastro", roles:"Idea Owner & Investor apps", pc1:"#0a1a3d", pc2:"#0d2a6b",
-      stat:"Live on the App Store & Google Play",
-      desc:"A platform connecting idea owners with investors — post a project, define funding needs, browse and message investors directly, all in one trusted marketplace.",
-      tags:["Flutter","Marketplace","Chat"],
-      coverPos:"center 46%",
-      shots:[
-        { src:"assets/invastro-2-browse.png", label:"Browse & filter opportunities" },
-        { src:"assets/invastro-3-detail.png", label:"Opportunity detail & capital" },
-        { src:"assets/invastro-6-chat.png",   label:"Direct chat with owners" },
-        { src:"assets/invastro-4-create.png", label:"Create a listing" },
-        { src:"assets/invastro-5-manage.png", label:"Manage listings & views" },
-        { src:"assets/invastro-1-splash.png", label:"Splash & branding" },
-      ],
-      glyph:'<path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.6" fill="none"/><path d="M12 8v8M8.5 10v4M15.5 10v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
     { name:"Vero", roles:"Customer & Provider apps", pc1:"#0f2e29", pc2:"#123d34",
-      stat:"13,800+ iOS · 1,000+ Android",
-      desc:"Multi-vehicle booking with dynamic pricing, subscriptions/packages, in-app wallet, and real-time order tracking.",
-      tags:["Flutter","Payments","Real-time"],
+      stat:"14.2K iOS · 1,000+ Android",
+      desc:"Book a car wash or an AC wash — or gift the visit. Packages and wallet/Mada checkout; providers run a stepper with before/after photos.",
+      tags:["Flutter","Tracking","Packages","Payments"],
+      links:[
+        { label:"App Store",           url:"https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" },
+        { label:"Google Play",         url:"https://play.google.com/store/apps/details?id=com.wady.vero" },
+        { label:"Provider · Play",     url:"https://play.google.com/store/apps/details?id=com.wady.veroprovider" },
+      ],
       shots:[
         { src:"assets/vero-2-home.png",           label:"Home & services" },
         { src:"assets/vero-3-packages.png",       label:"Wash packages" },
@@ -712,51 +732,155 @@
         { src:"assets/vero-1-splash.png",         label:"Splash & branding" },
       ],
       glyph:'<path d="M4 15c0-5 3.5-9 8-9s8 4 8 9" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="8" cy="17" r="1.5" fill="white"/><circle cx="16" cy="17" r="1.5" fill="white"/>' },
-    { name:"Captains", roles:"Customer & Service Provider apps", pc1:"#3d2412", pc2:"#5a3419",
-      stat:"10,000+ downloads · 5.0★ (141 reviews)",
-      desc:"Real-time order management, shareable digital gift codes, deep-linked referral system, and payment integration.",
-      tags:["Flutter","Deep Linking","Payments"],
-      img:"assets/captains.jpg",
+    { name:"GTech", roles:"Customer & Merchant apps", pc1:"#1c221d", pc2:"#28312a",
+      stat:"Quote-to-order marketplace",
+      desc:"Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat.",
+      tags:["Flutter","RFQ","Chat","Payments"],
+      links:[
+        { label:"App Store",            url:"https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" },
+        { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.ghiartech" },
+        { label:"Business · App Store", url:"https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414" },
+        { label:"Business · Play",      url:"https://play.google.com/store/apps/details?id=com.wady.gtechseller" },
+      ],
+      shots:[
+        { src:"assets/gtech-1-home.png",    label:"Home & merchants" },
+        { src:"assets/gtech-2-orders.png",  label:"My orders" },
+        { src:"assets/gtech-3-store.png",   label:"Store profile" },
+        { src:"assets/gtech-4-quotes.png",  label:"Quote requests" },
+        { src:"assets/gtech-5-splash.png",  label:"Splash & branding" },
+      ],
+      glyph:'<path d="M14.7 6.3a3.5 3.5 0 00-4.9 4.2L4 16.3 5.7 18l5.8-5.8a3.5 3.5 0 004.2-4.9l-2 2-1.4-1.4 2-2z" fill="white"/>' },
+    { name:"Invastro", roles:"Idea Owner & Investor apps", pc1:"#0a1a3d", pc2:"#0d2a6b",
+      stat:"Owners × investors",
+      desc:"List a project or find capital — filter by city, sector, and funding, then chat in-app without sharing a phone number.",
+      tags:["Flutter","Listings","Chat","Filters"],
+      coverPos:"center 46%",
+      links:[
+        { label:"App Store",   url:"https://apps.apple.com/us/app/invastro/id6769418304" },
+        { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.invastro" },
+      ],
+      shots:[
+        { src:"assets/invastro-2-browse.png", label:"Browse & filter opportunities" },
+        { src:"assets/invastro-3-detail.png", label:"Opportunity detail & capital" },
+        { src:"assets/invastro-6-chat.png",   label:"Direct chat with owners" },
+        { src:"assets/invastro-4-create.png", label:"Create a listing" },
+        { src:"assets/invastro-5-manage.png", label:"Manage listings & views" },
+        { src:"assets/invastro-1-splash.png", label:"Splash & branding" },
+      ],
+      glyph:'<path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.6" fill="none"/><path d="M12 8v8M8.5 10v4M15.5 10v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
+    { name:"Captainz", roles:"Customer & Rider apps", pc1:"#3d2412", pc2:"#5a3419",
+      stat:"12K+ iOS · 10K+ Android · 5.0★ (164 reviews)",
+      desc:"Book a wash at a saved pin or buy a package. Pay from wallet or Mada, add extras, and redeem partner vouchers — riders take jobs on a live map and climb a points board.",
+      tags:["Flutter","Wallet","Packages","Payments"],
+      links:[
+        { label:"App Store",        url:"https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" },
+        { label:"Google Play",      url:"https://play.google.com/store/apps/details?id=com.captainz.captainz" },
+        { label:"Rider · App Store", url:"https://apps.apple.com/us/app/captainz-rider/id6751917266" },
+        { label:"Rider · Play",     url:"https://play.google.com/store/apps/details?id=com.captainz.captainzprovider" },
+      ],
+      shots:[
+        { src:"assets/captains-1-splash.png",         label:"Splash & branding" },
+        { src:"assets/captains-2-home.png",           label:"Home & services" },
+        { src:"assets/captains-3-gift.png",           label:"Send a gift" },
+        { src:"assets/captains-4-packages.png",       label:"Wash packages" },
+        { src:"assets/captains-5-coupons.png",        label:"Discount codes" },
+        { src:"assets/captains-6-cars.png",           label:"My vehicles" },
+        { src:"assets/captains-7-package-detail.png", label:"Package detail & payment" },
+        { src:"assets/captains-8-branding.png",       label:"Brand intro" },
+        { src:"assets/captains-9-booking.png",        label:"Booking details" },
+        { src:"assets/captains-10-leaderboard.png",   label:"Captain leaderboard" },
+      ],
       glyph:'<path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="white"/>' },
     { name:"Soapy", roles:"Customer & Captain apps", pc1:"#0e2b24", pc2:"#12392f",
-      stat:"5,000+ combined downloads",
-      desc:"Full booking/checkout flow with wallet and promotions, live order tracking, and a captain-side leaderboard.",
-      tags:["Flutter","Wallet","Real-time"],
+      stat:"5.32K iOS · 500+ Android",
+      desc:"Book a wash or a named package with extras included. Pay by Tabby, Mada, or wallet — captains run jobs from a date-filtered earnings dashboard.",
+      tags:["Flutter","Tabby","Packages","Wallet"],
+      links:[
+        { label:"App Store",       url:"https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" },
+        { label:"Google Play",     url:"https://play.google.com/store/apps/details?id=sa.soapy.app" },
+        { label:"Biker · Play",    url:"https://play.google.com/store/apps/details?id=sa.soapy.driver" },
+      ],
       shots:[
-        { src:"assets/soapy-1-splash.png",            label:"Splash & branding" },
-        { src:"assets/soapy-2-home.png",              label:"Home & services" },
-        { src:"assets/soapy-3-package-detail.png",    label:"Package detail & Tabby checkout" },
-        { src:"assets/soapy-4-bookings.png",          label:"My bookings" },
-        { src:"assets/soapy-5-intro.png",             label:"App intro" },
-        { src:"assets/soapy-6-captain-next.png",      label:"Captain — next booking" },
-        { src:"assets/soapy-7-history.png",           label:"Booking history" },
+        { src:"assets/soapy-2-home.png",              label:"Home, wallet & packages" },
+        { src:"assets/soapy-3-package-detail.png",    label:"Package + Tabby checkout" },
+        { src:"assets/soapy-4-bookings.png",          label:"Current & past bookings" },
         { src:"assets/soapy-8-captain-dashboard.png", label:"Captain dashboard" },
+        { src:"assets/soapy-6-captain-next.png",      label:"Captain — next job" },
+        { src:"assets/soapy-7-history.png",           label:"Captain history" },
+        { src:"assets/soapy-1-splash.png",            label:"Splash & branding" },
+        { src:"assets/soapy-5-intro.png",             label:"App intro" },
       ],
       glyph:'<path d="M12 3c3 4 5 7 5 10a5 5 0 01-10 0c0-3 2-6 5-10z" fill="white"/>' },
-    { name:"GTech", roles:"Customer & Merchant apps", pc1:"#1c221d", pc2:"#28312a",
-      stat:"Real-time chat · deep linking",
-      desc:"Real-time chat between customers and merchants, advanced product search, and order/coupon management.",
-      tags:["Flutter","Chat","Search"],
-      img:"assets/gtech.jpg",
-      glyph:'<path d="M14.7 6.3a3.5 3.5 0 00-4.9 4.2L4 16.3 5.7 18l5.8-5.8a3.5 3.5 0 004.2-4.9l-2 2-1.4-1.4 2-2z" fill="white"/>' },
     { name:"Magnet", roles:"Customer & Merchant apps", pc1:"#332008", pc2:"#4a2f0c",
-      stat:"Full order lifecycle",
-      desc:"Flexible product variants, returns workflow, scratch-to-win promotional campaigns, full order lifecycle.",
-      tags:["Flutter","E-commerce","Promotions"],
-      img:"assets/magnet.jpg",
+      stat:"Stores + custom orders",
+      desc:"Shop companies or freelancers — size, color, and made-to-measure requests. Merchants accept or reject, handle returns, and move orders waiting → preparing → out for delivery.",
+      tags:["Flutter","Orders","Returns","Variants"],
+      links:[
+        { label:"App Store",            url:"https://apps.apple.com/us/app/magnet/id6746203011" },
+        { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.magnet" },
+        { label:"Provider · App Store", url:"https://apps.apple.com/us/app/magnet-provider/id6746348471" },
+        { label:"Provider · Play",      url:"https://play.google.com/store/apps/details?id=com.wady.magnetprovider" },
+      ],
+      shots:[
+        { src:"assets/magnet-2-stores.png",       label:"Store directory" },
+        { src:"assets/magnet-3-store.png",        label:"Store profile" },
+        { src:"assets/magnet-5-dashboard.png",    label:"Merchant dashboard" },
+        { src:"assets/magnet-6-orders.png",       label:"Accept or reject" },
+        { src:"assets/magnet-7-order-detail.png", label:"Fulfillment stepper" },
+        { src:"assets/magnet-1-splash.png",       label:"Splash & branding" },
+        { src:"assets/magnet-4-intro.png",        label:"App intro" },
+      ],
       glyph:'<path d="M7 4v7a5 5 0 0010 0V4" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M7 4h3M14 4h3" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
-    { name:"GlowUp", roles:"Customer & Salon apps", pc1:"#33101d", pc2:"#4a1a2b",
-      stat:"Location-based discovery",
-      desc:"Location-based salon discovery, real-time availability booking, reviews/ratings, salon-side management.",
-      tags:["Flutter","Location","Booking"],
-      img:"assets/glowup.jpg",
+    { name:"GlowUp", roles:"Customer & Provider apps", pc1:"#33101d", pc2:"#4a1a2b",
+      stat:"Men’s & women’s salon + spa",
+      desc:"Four verticals, timed services, then a barber or the cart. Pay wallet, Mada, or cash — shops accept or reject, add extras mid-job, and withdraw.",
+      tags:["Flutter","Booking","Wallet","Payments"],
+      links:[
+        { label:"App Store",            url:"https://apps.apple.com/us/app/glow-up/id6615080351" },
+        { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.naeima" },
+        { label:"Provider · App Store", url:"https://apps.apple.com/us/app/glowup-provider/id6739752819" },
+        { label:"Provider · Play",      url:"https://play.google.com/store/apps/details?id=com.wady.glowupprovider" },
+      ],
+      shots:[
+        { src:"assets/glowup-1-home.png",     label:"Home & salon discovery" },
+        { src:"assets/glowup-3-salon.png",    label:"Salon profile" },
+        { src:"assets/glowup-4-services.png", label:"Hair care services" },
+        { src:"assets/glowup-2-splash.png",   label:"Splash & branding" },
+      ],
       glyph:'<path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>' },
     { name:"WarshaStation", roles:"Customer & Vendor apps", pc1:"#102420", pc2:"#15332b",
-      stat:"Social-style stories",
-      desc:"Social-style stories (image/video), advanced search and filtering, merchant analytics dashboard.",
-      tags:["Flutter","Stories","Analytics"],
-      img:"assets/warshastation.jpg",
+      stat:"Storefront + vendor ops",
+      desc:"Each workshop is a store — services, parts, and rental. Book a slot or checkout. Vendors pass KYC, run branches and staff, and redeem jobs by QR.",
+      tags:["Flutter","Booking","KYC","Chat"],
+      links:[
+        { label:"App Store",   url:"https://apps.apple.com/us/app/warshastation/id6744632393" },
+        { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.warsha.warshastationnn" },
+      ],
+      shots:[
+        { src:"assets/warsha-3-workshop.png",   label:"Workshop profile" },
+        { src:"assets/warsha-4-services.png",   label:"Services & pricing" },
+        { src:"assets/warsha-5-chat.png",       label:"Chat with vendor" },
+        { src:"assets/warsha-6-cars.png",       label:"Vehicle garage" },
+        { src:"assets/warsha-2-onboarding.png", label:"User vs vendor" },
+        { src:"assets/warsha-1-splash.png",     label:"Splash & branding" },
+      ],
       glyph:'<rect x="4" y="10" width="16" height="6" rx="2" fill="white"/><circle cx="8" cy="18" r="1.6" fill="white"/><circle cx="16" cy="18" r="1.6" fill="white"/>' },
+    { name:"Timey", roles:"Client project", pc1:"#1a1033", pc2:"#2a1850",
+      stat:"Social · creator booking · ads",
+      desc:"A client's social platform — stories, real-time chat, and an in-app camera, plus paid video sessions with creators and a self-serve ads flow. Split work across a 3-developer Flutter team and held final say on technical decisions, including AR-filter vendor trade-offs when the existing SDK became a cost issue.",
+      tags:["Flutter","Chat","Agora","Ads"],
+      live:false,
+      shots:[
+        { src:"assets/timey-1-stories.jpg",  label:"Stories feed" },
+        { src:"assets/timey-2-chat.jpg",     label:"Real-time chat" },
+        { src:"assets/timey-3-camera.jpg",   label:"In-app camera & filters" },
+        { src:"assets/timey-4-profile.jpg",  label:"Creator profile & subscriptions" },
+        { src:"assets/timey-5-trending.jpg", label:"Trending feed" },
+        { src:"assets/timey-6-tips.jpg",     label:"Tips & supporters" },
+        { src:"assets/timey-7-call.jpg",     label:"Creator video session" },
+        { src:"assets/timey-8-splash.jpg",   label:"Splash & branding" },
+      ],
+      glyph:'<circle cx="12" cy="12" r="8" stroke="white" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="2.4" fill="white"/>' },
   ];
 
   const grid = document.getElementById('projectGrid');
@@ -780,7 +904,7 @@
             aria-label="Screenshot ${i + 1}: ${s.label}"></button>`).join('')}
       </div>`
       : `<div class="strip-wrap" style="--pc1:${p.pc1}; --pc2:${p.pc2}">
-           <span class="live-badge">Live</span>
+           ${p.live === false ? '' : '<span class="live-badge">Live</span>'}
            <div class="shot-strip" aria-hidden="true">
              ${[0.92, 0.5, 0.3, 0.18].map(o =>
                `<div class="shot-ph"><svg viewBox="0 0 24 24" style="opacity:${o}">${p.glyph}</svg></div>`).join('')}
