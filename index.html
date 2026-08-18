@@ -41,7 +41,7 @@
     "https://linkedin.com/in/mohamed-ayman-devv"
   ],
   "description": "Senior Flutter developer based in Egypt. 3.5+ years, 20+ production apps across marketplaces, booking, social, and field service — from estimate to store release.",
-  "knowsAbout": ["Flutter", "Dart", "Mobile Development", "Clean Architecture", "BLoC", "Cubit", "Provider", "Riverpod"]
+  "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "BLoC", "Cubit", "Provider", "Riverpod", "Payments", "Agora", "Google Maps", "Apple Pay"]
 }
 </script>
 
@@ -226,7 +226,7 @@
   .tag{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
 
   /* SKILLS */
-  .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
   .skill-card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; transition:all .18s;}
   .skill-card:hover{border-color:var(--border-strong); transform:translateY(-3px);}
   .skill-head{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--mint); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
@@ -405,9 +405,9 @@
     <ul class="nav-links">
       <li><a href="#top">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -418,9 +418,9 @@
   <ul class="mobile-menu" id="mobileMenu">
     <li><a href="#top">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -433,7 +433,7 @@
     <span class="pill"><span class="pill-dot"></span>Available for opportunities</span>
     <h1 class="display">Mohamed Ayman</h1>
     <h2>Senior Flutter Developer</h2>
-    <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years, 20+ apps for Saudi companies: marketplaces, booking, social, and field service. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
+    <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years, 20+ apps for Saudi companies: social, marketplaces, booking, live maps, payments, and camera/AR. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:mohamed.ayman.devv@gmail.com">✉ Contact Me</a>
       <a class="btn btn-ghost" href="#projects">View Projects ↓</a>
@@ -462,7 +462,7 @@
     </div>
     <div class="about-grid">
       <div class="about-body reveal">
-        <p>I'm a senior Flutter developer based in Egypt, with 3.5+ years shipping production apps for Saudi companies. I own the mobile side end to end: estimate, build, store listing, then crash reports and the next slice. 20+ apps shipped across marketplaces, booking, social, and field service.</p>
+        <p>I'm a senior Flutter developer based in Egypt, with 3.5+ years shipping production apps for Saudi companies. I own the mobile side end to end: estimate, build, store listing, then crash reports and the next slice. 20+ apps — social, marketplaces, booking, payments, live maps, and camera/AR. Not one product shape on repeat.</p>
         <p>I work in feature-first Clean Architecture and BLoC/Cubit so another engineer can pick the work up. Payments, chat, maps, KYC, tracking, and in-app cameras are already in the apps I've shipped — Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay — not a demo checkout.</p>
         <p>I came into Flutter after QA and client work, so a ticket still has to survive a store listing — not just a pull request. I talk to the client and still write the code.</p>
         <div class="about-chips">
@@ -495,6 +495,91 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title reveal">
+      <h2 class="display">Skills &amp; Technologies</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <div class="skill-head">Mobile Development</div>
+        <ul>
+          <li>Flutter &amp; Dart</li>
+          <li>iOS &amp; Android store release</li>
+          <li>App flavors / multiple binaries</li>
+          <li>RTL &amp; localization</li>
+          <li>Performance profiling</li>
+          <li>Camera, location, native APIs</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">Architecture &amp; State</div>
+        <ul>
+          <li>Feature-first Clean Architecture</li>
+          <li>BLoC / Cubit</li>
+          <li>Provider</li>
+          <li>Riverpod</li>
+          <li>GetIt</li>
+          <li>Repository / UseCase</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">Realtime, Video &amp; AR</div>
+        <ul>
+          <li>Agora / Zego live video</li>
+          <li>Pusher</li>
+          <li>Firebase Realtime</li>
+          <li>Banuba AR / camera filters</li>
+          <li>In-app camera</li>
+          <li>FCM &amp; deep linking</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">Payments</div>
+        <ul>
+          <li>Mada · Visa · Apple Pay</li>
+          <li>Tabby · Tamara (BNPL)</li>
+          <li>HyperPay / PayTabs</li>
+          <li>In-app wallets</li>
+          <li>Payouts &amp; cash</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">Product Surfaces</div>
+        <ul>
+          <li>Social (stories, chat, groups)</li>
+          <li>Live maps &amp; dispatch</li>
+          <li>Marketplace &amp; RFQ</li>
+          <li>Booking &amp; scheduling</li>
+          <li>E-commerce (variants, returns)</li>
+          <li>KYC &amp; vendor ops</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">Maps &amp; Delivery</div>
+        <ul>
+          <li>Google Maps</li>
+          <li>Live tracking</li>
+          <li>QR scan &amp; redeem</li>
+          <li>REST APIs</li>
+          <li>Crashlytics &amp; Analytics</li>
+          <li>CI/CD</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title reveal">
+      <h2 class="display">Projects</h2>
+      <div class="section-rule"></div>
+      <p class="section-lead">Social, marketplaces, booking, live maps, payments, and camera/AR — different products, not one template.</p>
+    </div>
+    <div class="proj-grid" id="projectGrid"></div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-title reveal">
@@ -518,11 +603,9 @@
             <span>📍 Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Own the Flutter side of Wady client apps from estimate through store release, then keep the listing live.</li>
-            <li>Magnet — company and freelancer shops with size/color and made-to-measure requests; merchants accept or reject, then waiting → preparing → out for delivery, plus returns.</li>
-            <li>GTech — spare-parts RFQ: photo/spec requests, per-item bids, then pickup or courier tracking.</li>
-            <li>Invastro — idea owners and investors list deals; filter by city, sector, and capital, then chat in-app.</li>
-            <li>Warsha Station — workshop storefronts for services, parts, and rental; vendors pass KYC, run branches/staff, and redeem jobs by QR.</li>
+            <li>Own the Flutter side of client products from estimate through store release, then keep the listing live.</li>
+            <li>Marketplace and RFQ work: custom orders, merchant bidding, fulfillment steppers, and returns.</li>
+            <li>Listing, matching, and vendor-ops products: filters, in-app chat, KYC, branches/staff, and QR redeem.</li>
           </ul>
           <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Clean Architecture</span><span class="tag">Client-facing</span></div>
         </div>
@@ -567,11 +650,10 @@
           </div>
           <ul class="tl-list">
             <li>Shipped 10+ production apps and kept them live — store listings, payments, and the features each product actually needed.</li>
-            <li>Vero — car wash and AC wash; gift the visit; packages and wallet/Mada; providers run a stepper with before/after photos.</li>
-            <li>Glow Up — men’s and women’s salon and spa; timed services then a barber; shops accept or reject, add extras, and withdraw.</li>
+            <li>On-demand and booking products: packages, wallets, timed services, job steppers, shop accept/reject, extras, and payouts.</li>
             <li>Integrated Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets across those products.</li>
           </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Multi-role</span></div>
+          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Wallets</span></div>
         </div>
       </div>
 
@@ -598,58 +680,6 @@
       </div>
 
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-title reveal">
-      <h2 class="display">Skills &amp; Technologies</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="skills-grid reveal">
-      <div class="skill-card">
-        <div class="skill-head">Language &amp; SDK</div>
-        <ul><li>Dart</li><li>Flutter</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">State Management</div>
-        <ul><li>BLoC</li><li>Cubit</li><li>Provider</li><li>Riverpod</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Architecture</div>
-        <ul><li>Clean Architecture</li><li>Feature-First</li><li>Dependency Injection (GetIt)</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Networking &amp; APIs</div>
-        <ul><li>REST APIs</li><li>Deep Linking</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Firebase Services</div>
-        <ul><li>Realtime DB</li><li>Analytics</li><li>FCM</li><li>Crashlytics</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Payments</div>
-        <ul><li>Mada / Visa</li><li>Tabby / Tamara</li><li>HyperPay / PayTabs</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Real-Time &amp; AR</div>
-        <ul><li>Agora / Zego</li><li>Pusher</li><li>Banuba AR</li></ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Tools &amp; Practices</div>
-        <ul><li>Git / GitHub</li><li>CI/CD basics</li><li>Trello</li><li>Google Maps</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-title reveal">
-      <h2 class="display">Projects</h2>
-      <div class="section-rule"></div>
-      <p class="section-lead">Client and store apps — marketplaces, booking, social, and field service. Different products, different features.</p>
-    </div>
-    <div class="proj-grid" id="projectGrid"></div>
   </section>
 
   <!-- EDUCATION -->
