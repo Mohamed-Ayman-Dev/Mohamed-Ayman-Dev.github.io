@@ -145,9 +145,10 @@
   .social-icon{
     width:38px; height:38px; border-radius:50%; border:1px solid var(--border);
     display:flex; align-items:center; justify-content:center; color:var(--muted); transition:all .15s;
+    cursor:pointer;
   }
   .social-icon:hover{border-color:var(--mint); color:var(--mint); transform:translateY(-2px);}
-  .social-icon svg{width:16px; height:16px;}
+  .social-icon svg{width:16px; height:16px; pointer-events:none;}
 
   /* SECTION SHARED */
   section{padding:90px 0;}
@@ -213,6 +214,8 @@
   .tl-icon svg{width:18px; height:18px;}
   .tl-role{font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; color:var(--text);}
   .tl-company{color:var(--mint); font-weight:600; font-size:14.5px;}
+  .tl-company a{color:inherit;}
+  .tl-company a:hover{text-decoration:underline; text-underline-offset:3px;}
   .tl-badge{
     font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--gold); background:rgba(217,164,65,0.12);
     border:1px solid rgba(217,164,65,0.3); padding:3px 9px; border-radius:999px; margin-left:8px;
@@ -435,7 +438,7 @@
     <h2>Senior Flutter Developer</h2>
     <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years, 20+ apps for Saudi companies: social, marketplaces, booking, live maps, payments, and camera/AR. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:mohamed.ayman.devv@gmail.com">✉ Contact Me</a>
+      <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ Contact Me</a>
       <a class="btn btn-ghost" href="#projects">View Projects ↓</a>
     </div>
     <div class="social-row">
@@ -445,7 +448,7 @@
       <a class="social-icon" href="https://linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
       </a>
-      <a class="social-icon" href="mailto:mohamed.ayman.devv@gmail.com" aria-label="Email">
+      <a class="social-icon" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener" aria-label="Email Mohamed at mohamed.ayman.devv@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
       </a>
       <a class="social-icon" href="tel:+201146574367" aria-label="Phone">
@@ -548,11 +551,11 @@
       <div class="skill-card">
         <div class="skill-head">Product Surfaces</div>
         <ul>
-          <li>Social (stories, chat, groups)</li>
+          <li>Social (stories, Pusher chat, groups)</li>
           <li>Live maps &amp; dispatch</li>
           <li>Marketplace &amp; RFQ</li>
           <li>Booking &amp; scheduling</li>
-          <li>E-commerce (variants, returns)</li>
+          <li>Referrals &amp; scratch-to-win</li>
           <li>KYC &amp; vendor ops</li>
         </ul>
       </div>
@@ -594,8 +597,8 @@
           <div class="tl-top">
             <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div>
-              <div class="tl-role">Mobile Developer <span class="tl-badge">CONTRACT</span></div>
-              <div class="tl-company">Wady</div>
+              <div class="tl-role">Mobile Developer</div>
+              <div class="tl-company"><a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></div>
             </div>
           </div>
           <div class="tl-meta">
@@ -618,7 +621,7 @@
             <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div>
               <div class="tl-role">Senior Flutter Developer</div>
-              <div class="tl-company">Topline</div>
+              <div class="tl-company"><a href="https://topline.com.sa/" target="_blank" rel="noopener">Topline</a></div>
             </div>
           </div>
           <div class="tl-meta">
@@ -641,7 +644,7 @@
             <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div>
               <div class="tl-role">Flutter Developer</div>
-              <div class="tl-company">Wady</div>
+              <div class="tl-company"><a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></div>
             </div>
           </div>
           <div class="tl-meta">
@@ -707,7 +710,7 @@
       <h2 class="display">Let's build something that ships.</h2>
       <p>Open to Senior Flutter roles — remote, hybrid, relocate, or on-site. If you need someone who can own the mobile product from a messy brief to a live listing, start here. I usually reply the same day.</p>
       <div class="contact-links">
-        <a href="mailto:mohamed.ayman.devv@gmail.com">✉ mohamed.ayman.devv@gmail.com</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ mohamed.ayman.devv@gmail.com</a>
         <a href="tel:+201146574367">☎ +20 114 657 4367</a>
         <a href="https://linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener">GitHub</a>
@@ -747,7 +750,7 @@
     { name:"Vero", roles:"Customer & Provider apps", pc1:"#0f2e29", pc2:"#123d34",
       stat:"14.2K iOS · 1,000+ Android",
       desc:"Book a car wash or an AC wash — or gift the visit. Packages and wallet/Mada checkout; providers run a stepper with before/after photos.",
-      tags:["Flutter","Tracking","Packages","Payments"],
+      tags:["Wallet / Mada","Gift flow","Job stepper","Tracking"],
       links:[
         { label:"App Store",           url:"https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" },
         { label:"Google Play",         url:"https://play.google.com/store/apps/details?id=com.wady.vero" },
@@ -764,8 +767,8 @@
       glyph:'<path d="M4 15c0-5 3.5-9 8-9s8 4 8 9" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="8" cy="17" r="1.5" fill="white"/><circle cx="16" cy="17" r="1.5" fill="white"/>' },
     { name:"GTech", roles:"Customer & Merchant apps", pc1:"#1c221d", pc2:"#28312a",
       stat:"Quote-to-order marketplace",
-      desc:"Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat.",
-      tags:["Flutter","RFQ","Chat","Payments"],
+      desc:"Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat on Pusher. Marketing deep links open an order or a store, depending on the campaign.",
+      tags:["Photo RFQ","Per-item bids","Pusher","Deep links"],
       links:[
         { label:"App Store",            url:"https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" },
         { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.ghiartech" },
@@ -782,8 +785,8 @@
       glyph:'<path d="M14.7 6.3a3.5 3.5 0 00-4.9 4.2L4 16.3 5.7 18l5.8-5.8a3.5 3.5 0 004.2-4.9l-2 2-1.4-1.4 2-2z" fill="white"/>' },
     { name:"Invastro", roles:"Idea Owner & Investor apps", pc1:"#0a1a3d", pc2:"#0d2a6b",
       stat:"Owners × investors",
-      desc:"List a project or find capital — filter by city, sector, and funding, then chat in-app without sharing a phone number.",
-      tags:["Flutter","Listings","Chat","Filters"],
+      desc:"List a project or find capital — filter by city, sector, and funding, then chat in-app on Pusher without sharing a phone number.",
+      tags:["Capital matching","Pusher chat","City / sector filters","Private chat"],
       coverPos:"center 46%",
       links:[
         { label:"App Store",   url:"https://apps.apple.com/us/app/invastro/id6769418304" },
@@ -800,8 +803,8 @@
       glyph:'<path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.6" fill="none"/><path d="M12 8v8M8.5 10v4M15.5 10v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
     { name:"Captainz", roles:"Customer & Rider apps", pc1:"#3d2412", pc2:"#5a3419",
       stat:"12K+ iOS · 10K+ Android · 5.0★ (164 reviews)",
-      desc:"Book a wash at a saved pin or buy a package. Pay from wallet or Mada, add extras, and redeem partner vouchers — riders take jobs on a live map and climb a points board.",
-      tags:["Flutter","Wallet","Packages","Payments"],
+      desc:"Book a wash at a saved pin or buy a package. Pay from wallet or Mada, add extras, and redeem partner vouchers — riders take jobs on a live map and climb a points board. Share the app: when enough people install through your link and complete a first order, you get a gift. Deep links carry the invite.",
+      tags:["Referrals","Deep links","Live map","Wallet"],
       links:[
         { label:"App Store",        url:"https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" },
         { label:"Google Play",      url:"https://play.google.com/store/apps/details?id=com.captainz.captainz" },
@@ -824,7 +827,7 @@
     { name:"Soapy", roles:"Customer & Captain apps", pc1:"#0e2b24", pc2:"#12392f",
       stat:"5.32K iOS · 500+ Android",
       desc:"Book a wash or a named package with extras included. Pay by Tabby, Mada, or wallet — captains run jobs from a date-filtered earnings dashboard.",
-      tags:["Flutter","Tabby","Packages","Wallet"],
+      tags:["Tabby","Wallet","Packages","Earnings"],
       links:[
         { label:"App Store",       url:"https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" },
         { label:"Google Play",     url:"https://play.google.com/store/apps/details?id=sa.soapy.app" },
@@ -843,8 +846,8 @@
       glyph:'<path d="M12 3c3 4 5 7 5 10a5 5 0 01-10 0c0-3 2-6 5-10z" fill="white"/>' },
     { name:"Magnet", roles:"Customer & Merchant apps", pc1:"#332008", pc2:"#4a2f0c",
       stat:"Stores + custom orders",
-      desc:"Shop companies or freelancers — size, color, and made-to-measure requests. Merchants accept or reject, handle returns, and move orders waiting → preparing → out for delivery.",
-      tags:["Flutter","Orders","Returns","Variants"],
+      desc:"Shop companies or freelancers — size, color, and made-to-measure requests. Merchants accept or reject, handle returns, and move orders waiting → preparing → out for delivery. Scratch a card, reveal the code, type it in, and claim the win.",
+      tags:["Scratch-to-win","Variants","Returns","Fulfillment"],
       links:[
         { label:"App Store",            url:"https://apps.apple.com/us/app/magnet/id6746203011" },
         { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.magnet" },
@@ -864,7 +867,7 @@
     { name:"GlowUp", roles:"Customer & Provider apps", pc1:"#33101d", pc2:"#4a1a2b",
       stat:"Men’s & women’s salon + spa",
       desc:"Four verticals, timed services, then a barber or the cart. Pay wallet, Mada, or cash — shops accept or reject, add extras mid-job, and withdraw.",
-      tags:["Flutter","Booking","Wallet","Payments"],
+      tags:["Timed booking","Wallet","Payouts","Accept / reject"],
       links:[
         { label:"App Store",            url:"https://apps.apple.com/us/app/glow-up/id6615080351" },
         { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.naeima" },
@@ -880,8 +883,8 @@
       glyph:'<path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>' },
     { name:"WarshaStation", roles:"Customer & Vendor apps", pc1:"#102420", pc2:"#15332b",
       stat:"Storefront + vendor ops",
-      desc:"Each workshop is a store — services, parts, and rental. Book a slot or checkout. Vendors pass KYC, run branches and staff, and redeem jobs by QR.",
-      tags:["Flutter","Booking","KYC","Chat"],
+      desc:"Each workshop is a store — services, parts, and rental. Book a slot or checkout. Vendors pass KYC, run branches and staff, redeem jobs by QR, and chat in-app on Pusher.",
+      tags:["KYC","QR redeem","Pusher chat","Vendor ops"],
       links:[
         { label:"App Store",   url:"https://apps.apple.com/us/app/warshastation/id6744632393" },
         { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.warsha.warshastationnn" },
@@ -899,8 +902,8 @@
       glyph:'<rect x="4" y="10" width="16" height="6" rx="2" fill="white"/><circle cx="8" cy="18" r="1.6" fill="white"/><circle cx="16" cy="18" r="1.6" fill="white"/>' },
     { name:"Timey", roles:"Client project", pc1:"#1a1033", pc2:"#2a1850",
       stat:"Social · creator booking · ads",
-      desc:"A client's social platform — stories, real-time chat, and an in-app camera, plus paid video sessions with creators and a self-serve ads flow. Split work across a 3-developer Flutter team and held final say on technical decisions, including AR-filter vendor trade-offs when the existing SDK became a cost issue.",
-      tags:["Flutter","Chat","Agora","Ads"],
+      desc:"A client's social platform — stories, real-time chat on Pusher, and an in-app camera, plus paid video sessions with creators and a self-serve ads flow. Split work across a 3-developer Flutter team and held final say on technical decisions, including AR-filter vendor trade-offs when the existing SDK became a cost issue.",
+      tags:["Pusher chat","Agora","In-app camera","Ads"],
       live:false,
       shots:[
         { src:"assets/timey-1-stories.jpg",  label:"Stories feed" },
@@ -913,6 +916,37 @@
         { src:"assets/timey-8-splash.jpg",   label:"Splash & branding" },
       ],
       glyph:'<circle cx="12" cy="12" r="8" stroke="white" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="2.4" fill="white"/>' },
+    { name:"Nabtat Hasana", roles:"Produce e-commerce", pc1:"#143528", pc2:"#1d4a36",
+      stat:"Catalog store · OpenCart",
+      desc:"Plants, vegetables, fruit, and dates — categories, subcategories, cart, coupons, gift vouchers, and a wishlist, wired to an OpenCart backend. RTL storefront in SAR.",
+      tags:["OpenCart","Catalog","Coupons","RTL"],
+      links:[
+        { label:"App Store", url:"https://apps.apple.com/us/app/%D9%86%D8%A8%D8%AA%D8%A9-%D8%AD%D8%B3%D8%A7%D9%86%D8%A7/id6742134403" },
+      ],
+      shots:[
+        { src:"assets/nabtat-1-splash.jpg",     label:"Splash & branding" },
+        { src:"assets/nabtat-2-home.jpg",       label:"Home, banners & categories" },
+        { src:"assets/nabtat-3-categories.jpg", label:"Category list" },
+        { src:"assets/nabtat-4-listing.jpg",    label:"Most viewed products" },
+        { src:"assets/nabtat-5-product.jpg",    label:"Product detail" },
+        { src:"assets/nabtat-6-cart.jpg",       label:"Cart, coupon & totals" },
+      ],
+      glyph:'<path d="M12 21s-6-4.5-6-9a6 6 0 0112 0c0 4.5-6 9-6 9z" fill="white"/>' },
+    { name:"Spicy Offers", roles:"Establishment companion", pc1:"#2a1a08", pc2:"#4a2c0c",
+      stat:"QR redeem · usage analytics",
+      desc:"Companion for venues on Spicy Offers. The shop shows a QR; subscribed customers scan it from the main app to take the discount. Venues then read weekly usage and sales from this app.",
+      tags:["QR redeem","Usage analytics","OTP","RTL"],
+      links:[
+        { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.spicyoffers.facilitiesapp" },
+      ],
+      shots:[
+        { src:"assets/spicy-1-splash.jpg",  label:"Splash & branding" },
+        { src:"assets/spicy-2-otp.jpg",     label:"OTP login" },
+        { src:"assets/spicy-3-qr.jpg",      label:"Establishment QR" },
+        { src:"assets/spicy-4-reports.jpg", label:"Usage reports" },
+        { src:"assets/spicy-5-account.jpg", label:"Account" },
+      ],
+      glyph:'<path d="M12 21s-7-5.2-7-10.2a7 7 0 0114 0c0 5-7 10.2-7 10.2z" fill="white"/><circle cx="12" cy="11" r="2.2" fill="#2a1a08"/>' },
   ];
 
   const grid = document.getElementById('projectGrid');
