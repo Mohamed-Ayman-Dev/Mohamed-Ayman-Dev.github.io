@@ -6,42 +6,66 @@
 <title>Mohamed Ayman — Senior Flutter Developer</title>
 
 <!-- SEO -->
-<meta name="description" content="Mohamed Ayman — Senior Flutter Developer in Egypt. 3.5+ years, 20+ production apps across marketplaces, booking, social, and field service. Clean Architecture, BLoC, payments — from estimate to store release.">
+<meta name="description" content="Mohamed Ayman — Senior Flutter Developer in Egypt. 3.5+ years, 20+ production apps across social, marketplaces, booking, live maps, payments, and camera/AR. Clean Architecture and BLoC, from estimate to store release.">
 <meta name="author" content="Mohamed Ayman">
-<meta name="keywords" content="Flutter Developer, Senior Flutter Developer, Mobile Developer, Dart, Egypt, Remote">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#070c0a">
 <link rel="canonical" href="https://mohamed-ayman-dev.github.io/">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Mohamed Ayman">
 <meta property="og:title" content="Mohamed Ayman — Senior Flutter Developer">
-<meta property="og:description" content="Senior Flutter developer. 3.5+ years, 20+ production apps — marketplaces, booking, social, field service. Open to remote, relocate, hybrid, or on-site.">
+<meta property="og:description" content="Senior Flutter developer in Egypt. 3.5+ years, 20+ production apps — social, marketplaces, booking, live maps, payments, camera/AR. Open to remote, relocate, hybrid, or on-site.">
 <meta property="og:url" content="https://mohamed-ayman-dev.github.io/">
 <meta property="og:image" content="https://mohamed-ayman-dev.github.io/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mohamed Ayman — Senior Flutter Developer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mohamed Ayman — Senior Flutter Developer">
-<meta name="twitter:description" content="Senior Flutter developer. 3.5+ years, 20+ production apps across marketplaces, booking, social, and field service.">
+<meta name="twitter:description" content="Senior Flutter developer in Egypt. 3.5+ years, 20+ production apps across social, marketplaces, booking, live maps, payments, and camera/AR.">
+<meta name="twitter:image" content="https://mohamed-ayman-dev.github.io/assets/og-cover.png">
+<meta name="twitter:image:alt" content="Mohamed Ayman — Senior Flutter Developer">
 
 <!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070c0a'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%233EE8A8' font-family='monospace' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="https://mohamed-ayman-dev.github.io/assets/apple-touch-icon.png">
 
 <!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mohamed Ayman",
-  "jobTitle": "Senior Flutter Developer",
-  "email": "mailto:mohamed.ayman.devv@gmail.com",
-  "telephone": "+201146574367",
-  "url": "https://mohamed-ayman-dev.github.io/",
-  "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
-  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Helwan University" },
-  "sameAs": [
-    "https://github.com/Mohamed-Ayman-Dev",
-    "https://linkedin.com/in/mohamed-ayman-devv"
-  ],
-  "description": "Senior Flutter developer based in Egypt. 3.5+ years, 20+ production apps across marketplaces, booking, social, and field service — from estimate to store release.",
-  "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "BLoC", "Cubit", "Provider", "Riverpod", "Payments", "Agora", "Google Maps", "Apple Pay"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mohamed-ayman-dev.github.io/#website",
+      "url": "https://mohamed-ayman-dev.github.io/",
+      "name": "Mohamed Ayman",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://mohamed-ayman-dev.github.io/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mohamed-ayman-dev.github.io/#person",
+      "name": "Mohamed Ayman",
+      "jobTitle": "Senior Flutter Developer",
+      "email": "mohamed.ayman.devv@gmail.com",
+      "telephone": "+201146574367",
+      "url": "https://mohamed-ayman-dev.github.io/",
+      "image": "https://mohamed-ayman-dev.github.io/assets/og-cover.png",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Helwan University" },
+      "worksFor": { "@type": "Organization", "name": "Wady", "url": "https://wady.sa/" },
+      "sameAs": [
+        "https://github.com/Mohamed-Ayman-Dev",
+        "https://www.linkedin.com/in/mohamed-ayman-devv"
+      ],
+      "description": "Senior Flutter developer based in Egypt. 3.5+ years, 20+ production apps across social, marketplaces, booking, live maps, payments, and camera/AR — from estimate to store release.",
+      "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "BLoC", "Cubit", "Provider", "Riverpod", "Payments", "Agora", "Google Maps", "Apple Pay"]
+    }
+  ]
 }
 </script>
 
@@ -194,10 +218,18 @@
     box-shadow:0 30px 70px -40px rgba(62,232,168,0.25);
   }
   .arch-title{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted); margin-bottom:18px; text-transform:uppercase; letter-spacing:0.06em;}
-  .arch-layer{border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:rgba(255,255,255,0.015);}
+  .arch-layer{
+    display:flex; align-items:flex-start; gap:14px;
+    border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:10px;
+    background:rgba(255,255,255,0.015);
+  }
+  .arch-layer:last-child{margin-bottom:0;}
+  .arch-layer .l-num{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--mint); font-weight:600;
+    line-height:1.2; padding-top:2px; min-width:1.6em;
+  }
   .arch-layer .l-name{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--mint); font-weight:600;}
-  .arch-layer .l-sub{font-size:11.5px; color:var(--muted); margin-top:3px;}
-  .arch-arrow{text-align:center; color:var(--border-strong); font-size:14px; margin:-4px 0 8px; font-family:'JetBrains Mono',monospace;}
+  .arch-layer .l-sub{font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.45;}
   /* EXPERIENCE - timeline */
   .timeline{position:relative; margin-left:12px; border-left:2px solid var(--border); padding-left:0;}
   .tl-item{position:relative; padding:0 0 34px 34px;}
@@ -245,6 +277,20 @@
     min-width:0; /* let the card shrink so the strip scrolls instead of widening the grid */
   }
   .proj-card:hover{border-color:var(--border-strong); transform:translateY(-4px); box-shadow:0 26px 50px -30px rgba(62,232,168,0.3);}
+  .proj-card.is-extra{display:none;}
+  .proj-grid.is-expanded .proj-card.is-extra{
+    display:flex;
+    animation:projReveal .45s ease both;
+  }
+  .proj-grid.is-expanded .proj-card.is-extra:nth-of-type(10){animation-delay:.05s;}
+  .proj-grid.is-expanded .proj-card.is-extra:nth-of-type(11){animation-delay:.12s;}
+  .proj-grid.is-expanded .proj-card.is-extra.is-revealed{animation:none;}
+  @keyframes projReveal{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:none;}
+  }
+  .proj-more{display:flex; justify-content:center; margin-top:28px;}
+  .proj-more[hidden]{display:none;}
 
   /* screenshot carousel */
   .strip-wrap{position:relative; min-width:0; border-radius:14px; overflow:hidden; background:#0b100e; border:1px solid rgba(255,255,255,0.07);}
@@ -438,17 +484,18 @@
     <h2>Senior Flutter Developer</h2>
     <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years, 20+ apps for Saudi companies: social, marketplaces, booking, live maps, payments, and camera/AR. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ Contact Me</a>
+      <a class="btn btn-primary" href="mailto:mohamed.ayman.devv@gmail.com?subject=Hi%20Mohamed">✉ Contact Me</a>
       <a class="btn btn-ghost" href="#projects">View Projects ↓</a>
+      <a class="btn btn-ghost" href="https://drive.google.com/file/d/1GQRoYzSc20meoOAc3VK0KfIC1lgTHOlQ/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a>
     </div>
     <div class="social-row">
       <a class="social-icon" href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.1.68-.22.68-.5v-1.75c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9v2.82c0 .28.18.6.69.5A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg>
       </a>
-      <a class="social-icon" href="https://linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <a class="social-icon" href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
       </a>
-      <a class="social-icon" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener" aria-label="Email Mohamed at mohamed.ayman.devv@gmail.com">
+      <a class="social-icon" href="mailto:mohamed.ayman.devv@gmail.com?subject=Hi%20Mohamed" aria-label="Email Mohamed at mohamed.ayman.devv@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
       </a>
       <a class="social-icon" href="tel:+201146574367" aria-label="Phone">
@@ -488,12 +535,35 @@
         </div>
       </div>
       <div class="architecture-visual reveal">
-        <div class="arch-title">// clean architecture layers</div>
-        <div class="arch-layer"><div class="l-name">Presentation</div><div class="l-sub">Cubit / BLoC · Screens · Widgets</div></div>
-        <div class="arch-arrow">↓ depends on</div>
-        <div class="arch-layer"><div class="l-name">Domain</div><div class="l-sub">UseCases · Abstract Repository</div></div>
-        <div class="arch-arrow">↑ implemented by</div>
-        <div class="arch-layer"><div class="l-name">Data</div><div class="l-sub">Repository Impl · DataSource</div></div>
+        <div class="arch-title">// how I ship</div>
+        <div class="arch-layer">
+          <div class="l-num">01</div>
+          <div>
+            <div class="l-name">Estimate</div>
+            <div class="l-sub">Brief → scope the mobile work</div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="l-num">02</div>
+          <div>
+            <div class="l-name">Build</div>
+            <div class="l-sub">Flutter, payments, the real features</div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="l-num">03</div>
+          <div>
+            <div class="l-name">Release</div>
+            <div class="l-sub">App Store + Google Play</div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="l-num">04</div>
+          <div>
+            <div class="l-name">Keep live</div>
+            <div class="l-sub">Crashes, the next slice, listing stays up</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -581,6 +651,9 @@
       <p class="section-lead">Social, marketplaces, booking, live maps, payments, and camera/AR — different products, not one template.</p>
     </div>
     <div class="proj-grid" id="projectGrid"></div>
+    <div class="proj-more" id="projMore" hidden>
+      <button type="button" class="btn btn-ghost" id="projMoreBtn" aria-expanded="false" aria-controls="projectGrid">Show more</button>
+    </div>
   </section>
 
   <!-- EXPERIENCE -->
@@ -597,13 +670,13 @@
           <div class="tl-top">
             <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div>
-              <div class="tl-role">Mobile Developer</div>
+              <div class="tl-role">Flutter Developer</div>
               <div class="tl-company"><a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></div>
             </div>
           </div>
           <div class="tl-meta">
-            <span>📅 Feb 2026 — Present</span>
-            <span>📍 Riyadh, Saudi Arabia · Remote</span>
+            <span>Feb 2026 — Present</span>
+            <span>Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
             <li>Own the Flutter side of client products from estimate through store release, then keep the listing live.</li>
@@ -620,16 +693,16 @@
           <div class="tl-top">
             <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div>
-              <div class="tl-role">Senior Flutter Developer</div>
+              <div class="tl-role">Flutter Developer</div>
               <div class="tl-company"><a href="https://topline.com.sa/" target="_blank" rel="noopener">Topline</a></div>
             </div>
           </div>
           <div class="tl-meta">
-            <span>📅 Aug 2024 — Feb 2026</span>
-            <span>📍 Riyadh, Saudi Arabia · Remote</span>
+            <span>Aug 2024 — Feb 2026</span>
+            <span>Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Senior technical point of contact on a client's social platform app — stories, real-time chat, groups, subscriptions, an in-app camera, and paid creator video sessions.</li>
+            <li>Technical point of contact on a client's social platform app — stories, real-time chat, groups, subscriptions, an in-app camera, and paid creator video sessions.</li>
             <li>Split feature work across a 3-developer Flutter team and held final say on technical decisions.</li>
             <li>Evaluated third-party AR/camera-filter vendors after the client discontinued the existing SDK over cost, presenting technical and cost trade-offs directly to the client.</li>
           </ul>
@@ -648,8 +721,8 @@
             </div>
           </div>
           <div class="tl-meta">
-            <span>📅 Jan 2023 — Aug 2024</span>
-            <span>📍 Riyadh, Saudi Arabia</span>
+            <span>Jan 2023 — Aug 2024</span>
+            <span>Riyadh, Saudi Arabia</span>
           </div>
           <ul class="tl-list">
             <li>Shipped 10+ production apps and kept them live — store listings, payments, and the features each product actually needed.</li>
@@ -671,8 +744,8 @@
             </div>
           </div>
           <div class="tl-meta">
-            <span>📅 Jun 2021 — Feb 2023</span>
-            <span>📍 Riyadh, Saudi Arabia</span>
+            <span>Jun 2021 — Feb 2023</span>
+            <span>Riyadh, Saudi Arabia</span>
           </div>
           <ul class="tl-list">
             <li>Single client contact: turned asks into tickets the team could build, then tested the release before it went out.</li>
@@ -695,12 +768,12 @@
       <div class="edu-top">
         <div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
         <div>
-          <div class="edu-degree">B.A., Arabic Literature</div>
+          <div class="edu-degree">Faculty of Arts</div>
           <div class="edu-school">Helwan University</div>
         </div>
       </div>
-      <div class="edu-meta">📅 2018 — 2021 · 📍 Cairo, Egypt</div>
-      <p class="edu-note">Helwan University. Flutter is the career; this is the degree.</p>
+      <div class="edu-meta">2018 — 2021 · Cairo, Egypt</div>
+      <p class="edu-note">Came into software through analysis and QA, then Flutter.</p>
     </div>
   </section>
 
@@ -710,10 +783,11 @@
       <h2 class="display">Let's build something that ships.</h2>
       <p>Open to Senior Flutter roles — remote, hybrid, relocate, or on-site. If you need someone who can own the mobile product from a messy brief to a live listing, start here. I usually reply the same day.</p>
       <div class="contact-links">
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ mohamed.ayman.devv@gmail.com</a>
+        <a href="mailto:mohamed.ayman.devv@gmail.com?subject=Hi%20Mohamed">✉ mohamed.ayman.devv@gmail.com</a>
         <a href="tel:+201146574367">☎ +20 114 657 4367</a>
-        <a href="https://linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://drive.google.com/file/d/1GQRoYzSc20meoOAc3VK0KfIC1lgTHOlQ/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a>
       </div>
     </div>
   </section>
@@ -841,7 +915,6 @@
         { src:"assets/soapy-6-captain-next.png",      label:"Captain — next job" },
         { src:"assets/soapy-7-history.png",           label:"Captain history" },
         { src:"assets/soapy-1-splash.png",            label:"Splash & branding" },
-        { src:"assets/soapy-5-intro.png",             label:"App intro" },
       ],
       glyph:'<path d="M12 3c3 4 5 7 5 10a5 5 0 01-10 0c0-3 2-6 5-10z" fill="white"/>' },
     { name:"Magnet", roles:"Customer & Merchant apps", pc1:"#332008", pc2:"#4a2f0c",
@@ -950,12 +1023,13 @@
   ];
 
   const grid = document.getElementById('projectGrid');
+  const INITIAL_VISIBLE = 9;
   const arrow = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
     stroke-linecap="round" stroke-linejoin="round"><path d="${d === 'prev' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'}"/></svg>`;
 
-  projects.forEach(p => {
+  projects.forEach((p, i) => {
     const card = document.createElement('article');
-    card.className = 'proj-card';
+    card.className = i >= INITIAL_VISIBLE ? 'proj-card is-extra' : 'proj-card';
 
     const media = p.shots ? `
       <div class="strip-wrap">
@@ -991,6 +1065,22 @@
     if (p.shots) setupCarousel(card, p);
     grid.appendChild(card);
   });
+
+  const extraCount = projects.length - INITIAL_VISIBLE;
+  const moreWrap = document.getElementById('projMore');
+  const moreBtn = document.getElementById('projMoreBtn');
+  if (extraCount > 0 && moreWrap && moreBtn) {
+    moreBtn.textContent = extraCount === 1 ? 'Show 1 more' : `Show ${extraCount} more`;
+    moreWrap.hidden = false;
+    moreBtn.addEventListener('click', () => {
+      grid.classList.add('is-expanded');
+      moreBtn.setAttribute('aria-expanded', 'true');
+      moreWrap.hidden = true;
+      grid.querySelectorAll('.proj-card.is-extra').forEach(card => {
+        card.addEventListener('animationend', () => card.classList.add('is-revealed'), { once: true });
+      });
+    });
+  }
 
   function setupCarousel(card, project) {
     const strip = card.querySelector('.shot-strip');

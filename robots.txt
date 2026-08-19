@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamed-ayman-dev.github.io/sitemap.xml
