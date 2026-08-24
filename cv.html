@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mohamed Ayman — Flutter Developer CV</title>
 <style>
-  @page { size: A4; margin: 11mm 13mm; }
+  @page { size: A4; margin: 10mm 12mm; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
     font-family: Arial, Helvetica, sans-serif;
     color: #111;
-    font-size: 9.6pt;
-    line-height: 1.32;
+    font-size: 9.45pt;
+    line-height: 1.3;
     background: #fff;
   }
   a {
@@ -56,7 +56,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 13px 0 6px;
+    margin: 11px 0 5px;
     padding-bottom: 2px;
     border-bottom: 1px solid #111;
     page-break-after: avoid;
@@ -64,8 +64,8 @@
 
   .summary { margin: 0; line-height: 1.36; }
 
-  .job { margin: 0 0 6px; page-break-inside: avoid; }
-  .proj { margin: 0 0 13px; page-break-inside: avoid; }
+  .job { margin: 0 0 5px; page-break-inside: avoid; }
+  .proj { margin: 0 0 7px; page-break-inside: avoid; }
   .job-top {
     display: flex;
     justify-content: space-between;
@@ -76,7 +76,7 @@
   .job-top .when { white-space: nowrap; }
   .job-loc { font-size: 9.5pt; margin: 1px 0 3px; color: #333; }
   ul { margin: 0; padding: 0 0 0 18px; }
-  li { margin: 0 0 3px; }
+  li { margin: 0 0 2px; }
 
   .skills p { margin: 0 0 2px; }
   .skills b { font-weight: 700; }
@@ -97,7 +97,7 @@
       width: 210mm;
       min-height: 297mm;
       margin: 20px auto;
-      padding: 11mm 13mm;
+      padding: 10mm 12mm;
       box-shadow: 0 2px 18px rgba(0,0,0,.18);
     }
   }
@@ -118,18 +118,18 @@
 
   <h2>Summary</h2>
   <p class="summary">
-    Senior Flutter developer with 4 years shipping production iOS and Android apps across different product types — social, marketplace, booking, and others — 20+ live store listings and 30K+ downloads.
+    Senior Flutter developer with 3.5+ years shipping production iOS and Android apps, primarily in the Saudi market and also Egypt, across social, marketplace, booking, and others — 20+ live store listings and 30K+ downloads.
     I have owned the mobile side from estimate through App Store and Google Play, on both the customer and provider apps.
-    I have handled client scope and technical trade-offs, set the architecture, and shipped under the deadline.
+    I have handled client scope and technical trade-offs, set the architecture in feature-first Clean Architecture and BLoC, and shipped under the deadline.
     On a client product I led a small Flutter team: estimates, how the work was split, and the technical calls.
   </p>
 
   <h2>Skills</h2>
   <div class="skills">
-    <p><b>Mobile:</b> Flutter, Dart, iOS and Android store release, app flavors / multiple binaries, RTL and localization, performance profiling, camera, maps, native APIs</p>
-    <p><b>Architecture:</b> Feature-first Clean Architecture, BLoC, Cubit, Provider, Riverpod, GetIt, repository / use case</p>
+    <p><b>Mobile:</b> Flutter, Dart, iOS and Android store release, app flavors / multiple binaries, RTL and localization, performance profiling, camera, maps, unit / widget / integration tests</p>
+    <p><b>Architecture:</b> Feature-first Clean Architecture, BLoC, Cubit, Provider, Riverpod, GetIt, repository / use case, go_router, auto_route, Dio</p>
     <p><b>Payments:</b> Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay, PayTabs, in-app wallets, payouts</p>
-    <p><b>Realtime and product:</b> Pusher, Agora, Zego, Firebase, FCM, deep linking, Google Maps, live tracking, QR redeem, KYC, vendor ops, Crashlytics, CI/CD</p>
+    <p><b>Realtime and product:</b> Pusher, Agora, Zego, Firebase, FCM, deep linking, Google Maps, QR redeem, KYC, vendor ops, Crashlytics, Sentry, GitHub Actions</p>
   </div>
 
   <h2>Work Experience</h2>
@@ -141,9 +141,8 @@
     </div>
     <div class="job-loc">Riyadh, Saudi Arabia · Remote</div>
     <ul>
-      <li>Own the Flutter side of client products from estimate through store release, then keep the listings live.</li>
-      <li>New mobile work plus support on products I originally shipped.</li>
-      <li>Marketplace and RFQ work: custom orders, merchant bidding, fulfillment, and returns.</li>
+      <li>Sole Flutter owner of the client mobile portfolio, building new apps and maintaining existing ones across all active client projects — estimate through both stores. Standups and client meetings: scope, estimates, and timelines.</li>
+      <li>Marketplace and RFQ: custom orders, merchant bidding, fulfillment, and returns (BLoC, Clean Architecture, GitHub Actions).</li>
     </ul>
   </div>
 
@@ -154,9 +153,9 @@
     </div>
     <div class="job-loc">Riyadh, Saudi Arabia · Remote</div>
     <ul>
-      <li>Technical point of contact on a client social platform — stories, chat, groups, camera, subscriptions, and paid creator sessions.</li>
-      <li>Split work across a 3-developer Flutter team and held final say on technical decisions.</li>
-      <li>Evaluated AR/camera-filter vendors after the client cut the existing SDK over cost, and presented technical and cost trade-offs.</li>
+      <li>Senior technical point of contact on the main client social platform — stories, realtime chat, groups, camera, subscriptions, and paid creator sessions (Pusher, Agora). Other Flutter client work ran alongside when Topline asked.</li>
+      <li>Led a 3-developer Flutter team: split the work, refactored the existing codebase, and held final say on BLoC/Clean Architecture.</li>
+      <li>Talked to the client on scope, blockers, and trade-offs — including AR/camera-filter vendors after they cut the existing SDK over cost.</li>
     </ul>
   </div>
 
@@ -167,9 +166,8 @@
     </div>
     <div class="job-loc">Riyadh, Saudi Arabia · Remote</div>
     <ul>
-      <li>Shipped production iOS and Android apps and kept them live — store listings and payment integrations.</li>
-      <li>On-demand and booking products: packages, wallets, job flow, and payouts.</li>
-      <li>Integrated Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets across those products.</li>
+      <li>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products (customer, provider, merchant). Managed the full lifecycle from estimation and development to deployment.</li>
+      <li>Designed scalable architecture and reusable component systems. Implemented real-time features, push notifications, deep linking, REST APIs, and GCC payments (Mada, Visa, Tabby, Tamara, HyperPay, wallets).</li>
     </ul>
   </div>
 
@@ -180,8 +178,8 @@
     </div>
     <div class="job-loc">Riyadh, Saudi Arabia · On-site</div>
     <ul>
-      <li>Single client contact: turned asks into tickets the team could build, then tested the release before it went out.</li>
-      <li>Kept scope and progress visible in Trello so engineering was not guessing.</li>
+      <li>Analyzed software projects and provided technical support to clients — turned asks into tickets, then tested the release.</li>
+      <li>Managed the project lifecycle from inception to delivery; kept scope and progress visible in Trello.</li>
     </ul>
   </div>
 
@@ -199,7 +197,7 @@
       · <a href="https://play.google.com/store/apps/details?id=com.wady.veroprovider">Provider · Play</a>
     </p>
     <ul>
-      <li>14.2K iOS and 1,000+ Android. Customer app: car wash as the core vertical, AC wash as the second — packages, service booking, orders, live map tracking, and coupons.</li>
+      <li>14.2K iOS and 1,000+ Android. Customer app: car wash as the core vertical, AC wash as the second — packages, service booking, orders, maps, and coupons.</li>
       <li>Provider app: stats, order follow-up, filters by job type, the customer’s pin on the map, and status changes through the job.</li>
     </ul>
   </div>
@@ -213,8 +211,8 @@
       · <a href="https://play.google.com/store/apps/details?id=com.captainz.captainzprovider">Rider · Play</a>
     </p>
     <ul>
-      <li>12K+ iOS and 10K+ Android; 5.0 rating (164 reviews). Customer app: on-demand car wash at a saved pin — packages, extras, booking, orders, live map tracking, coupons, gift a wash, and Noon/Carrefour vouchers.</li>
-      <li>Rider app: earnings, job follow-up, live map to the customer, status changes through the job, and a points leaderboard.</li>
+      <li>12K+ iOS and 10K+ Android; 5.0 rating (164 reviews). Customer app: on-demand car wash at a saved pin — packages, extras, booking, orders, maps, coupons, gift a wash, and Noon/Carrefour vouchers.</li>
+      <li>Rider app: earnings, job follow-up, map to the customer, status changes through the job, and a points leaderboard.</li>
     </ul>
   </div>
 
@@ -222,7 +220,7 @@
     <div class="head">Timey — Social platform with creator booking <span class="stack">(Flutter; client project; Pusher, Agora)</span></div>
     <ul>
       <li>User side: stories, realtime Pusher chat, groups, trending, in-app camera, subscriptions, and tips.</li>
-      <li>Creator side: paid Agora video sessions and a self-serve ads flow. Technical point of contact on a 3-developer Flutter team, including AR-filter vendor evaluation after the client cut the existing SDK over cost.</li>
+      <li>Creator side: paid Agora video sessions and a self-serve ads flow. Technical point of contact on a 3-developer Flutter team, including client trade-offs such as AR-filter vendor options after they cut the existing SDK over cost.</li>
     </ul>
   </div>
 
@@ -235,7 +233,7 @@
       · <a href="https://play.google.com/store/apps/details?id=com.wady.gtechseller">Business · Play</a>
     </p>
     <ul>
-      <li>Customer app: spare-parts RFQ by photo and spec (part number, condition, VIN) — compare merchant bids, in-app chat, orders, and tracking for pickup or courier.</li>
+      <li>Customer app: spare-parts RFQ by photo and spec (part number, condition, VIN) — compare merchant bids, in-app chat, orders, and pickup or courier status.</li>
       <li>Merchant app: sales stats, RFQ inbox, per-line quotes with VAT, filters by status, map/customer location, fulfillment status changes, KYC, and paid store plans.</li>
     </ul>
   </div>
@@ -261,7 +259,7 @@
       · <a href="https://play.google.com/store/apps/details?id=com.wady.magnetprovider">Provider · Play</a>
     </p>
     <ul>
-      <li>Customer app: company and freelancer shops — size/color, made-to-measure requests, cart, orders, tracking, returns, coupons, and scratch-to-win.</li>
+      <li>Customer app: company and freelancer shops — size/color, made-to-measure requests, cart, orders, returns, coupons, and scratch-to-win.</li>
       <li>Merchant app: sales stats, queues for orders/returns/custom requests, filters by status, accept/reject, and status changes waiting → preparing → out for delivery.</li>
     </ul>
   </div>
