@@ -299,7 +299,7 @@
   .tl-meta{display:flex; gap:16px; font-size:12.5px; color:var(--muted); margin:8px 0 16px; font-family:'JetBrains Mono',monospace; flex-wrap:wrap;}
   .tl-meta span{display:inline-flex; align-items:center; gap:5px;}
   .tl-list{list-style:none; margin:0 0 16px; padding:0;}
-  .tl-list li{position:relative; padding-left:18px; font-size:14px; color:#B8B8B8; margin-bottom:9px;}
+  .tl-list li{position:relative; padding-left:18px; font-size:14.5px; color:#B8B8B8; margin-bottom:11px; line-height:1.55;}
   .tl-list li::before{content:"▹"; position:absolute; left:0; color:var(--accent); font-size:12px; top:1px;}
   .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
   .tag{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
@@ -421,7 +421,14 @@
   .proj-desc b{color:var(--text); font-weight:600;}
   .proj-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto;}
   .proj-tags span{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
+  .proj-stores{display:flex; flex-direction:column; gap:8px; margin-top:14px;}
+  .proj-store{display:flex; flex-wrap:wrap; align-items:center; gap:8px;}
+  .proj-store-label{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted);
+    min-width:76px;
+  }
   .proj-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .proj-store .proj-links{margin-top:0;}
   .proj-links a{
     font-size:12px; font-weight:500; color:var(--accent); background:var(--accent-dim);
     border:1px solid rgba(255,87,34,0.28); padding:8px 13px; border-radius:999px;
@@ -740,10 +747,13 @@
             <span>Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Sole Flutter owner of the client mobile portfolio, building new apps and maintaining existing ones across all active client projects — estimate through both stores. Standups and client meetings: scope, estimates, and timelines.</li>
-            <li>Marketplace and RFQ: custom orders, merchant bidding, fulfillment, and returns (BLoC, Clean Architecture, GitHub Actions).</li>
+            <li>Sole Flutter owner of the client mobile portfolio — building new apps and keeping the live ones moving, from the first estimate through App Store and Google Play.</li>
+            <li>Most products ship as two binaries, not one listing: customer plus provider or merchant. I own both sides, including flavors and the store release for each.</li>
+            <li>Run standups and sit with clients on scope, estimates, and timelines — the conversation, not only the PR.</li>
+            <li>Marketplace and RFQ work: custom orders, merchants bidding per item, fulfillment, and returns. Feature-first Clean Architecture, BLoC, GitHub Actions for CI.</li>
+            <li>Same apps carry GCC payments (Mada, Visa, Tabby, Tamara, HyperPay), in-app wallets, deep links, and crash reporting with Sentry / Crashlytics.</li>
           </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC</span><span class="tag">Clean Architecture</span><span class="tag">CI/CD</span></div>
+          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC</span><span class="tag">Clean Architecture</span><span class="tag">CI/CD</span><span class="tag">Store release</span></div>
         </div>
       </div>
 
@@ -762,11 +772,12 @@
             <span>Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Senior technical point of contact on the main client social platform — stories, realtime chat, groups, camera, subscriptions, and paid creator sessions (Pusher, Agora). Other Flutter client work ran alongside when Topline asked.</li>
-            <li>Led a 3-developer Flutter team: split the work, refactored the existing codebase, and held final say on BLoC/Clean Architecture.</li>
-            <li>Talked to the client on scope, blockers, and trade-offs — including AR/camera-filter vendors after they cut the existing SDK over cost.</li>
+            <li>Senior technical point of contact on the main client social platform: stories, realtime chat, groups, in-app camera, subscriptions, and paid creator video sessions (Pusher, Agora).</li>
+            <li>That was the large-scope product. Other Flutter client work still ran alongside when Topline asked — I wasn't locked to one codebase.</li>
+            <li>Led a 3-developer Flutter team: split the work, refactored an existing codebase, and held final say on BLoC and Clean Architecture.</li>
+            <li>Sat with the client on scope, blockers, and trade-offs across features — including AR / camera-filter vendors after they cut the existing SDK over cost.</li>
           </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC/Cubit</span><span class="tag">Clean Architecture</span><span class="tag">Client-facing</span></div>
+          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC/Cubit</span><span class="tag">Clean Architecture</span><span class="tag">Client-facing</span><span class="tag">Team lead</span></div>
         </div>
       </div>
 
@@ -785,10 +796,13 @@
             <span>Riyadh, Saudi Arabia · Remote</span>
           </div>
           <ul class="tl-list">
-            <li>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products (customer, provider, merchant). Managed the full lifecycle from estimation and development to deployment.</li>
-            <li>Designed scalable architecture and reusable component systems. Implemented real-time features, push notifications, deep linking, REST APIs, and GCC payments (Mada, Visa, Tabby, Tamara, HyperPay, wallets).</li>
+            <li>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products — customer, provider, and merchant apps, not a single listing per brand.</li>
+            <li>Owned the full lifecycle: estimate, development, store release, then keep the listing live.</li>
+            <li>Designed the architecture and reusable components so a new client app didn't start from a blank project every time.</li>
+            <li>Real-time features, push notifications, deep linking, and REST (Dio) against the same backends the stores already depended on.</li>
+            <li>GCC payments in production: Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets — including payouts on the provider / merchant side.</li>
           </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Wallets</span></div>
+          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Wallets</span><span class="tag">Deep linking</span><span class="tag">Store release</span></div>
         </div>
       </div>
 
@@ -807,8 +821,9 @@
             <span>Riyadh, Saudi Arabia · On-site</span>
           </div>
           <ul class="tl-list">
-            <li>Analyzed software projects and provided technical support to clients — turned asks into tickets, then tested the release.</li>
-            <li>Managed the project lifecycle from inception to delivery; kept scope and progress visible in Trello.</li>
+            <li>Sat with clients on what they needed, turned those asks into tickets, then tested the release before it went out.</li>
+            <li>Followed each project from inception through delivery — requirements, progress, and what still blocked the client.</li>
+            <li>Kept scope and status visible in Trello so engineering and the client were looking at the same board.</li>
           </ul>
           <div class="tag-row"><span class="tag">QA</span><span class="tag">Trello</span><span class="tag">Client Comms</span></div>
         </div>
@@ -890,11 +905,11 @@
     { name:"Vero", roles:"Customer & Provider apps", pc1:"#1c1612", pc2:"#2a2118",
       stat:"14.2K iOS · 1,000+ Android",
       desc:"Book a car wash or an AC wash — or gift the visit. Packages and wallet/Mada checkout; providers run a stepper with before/after photos.",
-      tags:["Wallet / Mada","Gift flow","Job stepper","Tracking"],
+      tags:["Wallet / Mada","Gift flow","Job stepper","Maps"],
       links:[
-        { label:"App Store",           url:"https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" },
-        { label:"Google Play",         url:"https://play.google.com/store/apps/details?id=com.wady.vero" },
-        { label:"Provider · Play",     url:"https://play.google.com/store/apps/details?id=com.wady.veroprovider" },
+        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" },
+        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.vero" },
+        { group:"Provider", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.veroprovider" },
       ],
       shots:[
         { src:"assets/vero-2-home.png",           label:"Home & services" },
@@ -910,10 +925,10 @@
       desc:"Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat on Pusher. Marketing deep links open an order or a store, depending on the campaign.",
       tags:["Photo RFQ","Per-item bids","Pusher","Deep links"],
       links:[
-        { label:"App Store",            url:"https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" },
-        { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.ghiartech" },
-        { label:"Business · App Store", url:"https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414" },
-        { label:"Business · Play",      url:"https://play.google.com/store/apps/details?id=com.wady.gtechseller" },
+        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" },
+        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.ghiartech" },
+        { group:"Merchant", label:"App Store",   url:"https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414" },
+        { group:"Merchant", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.gtechseller" },
       ],
       shots:[
         { src:"assets/gtech-1-home.png",    label:"Home & merchants" },
@@ -944,12 +959,12 @@
     { name:"Captainz", roles:"Customer & Rider apps", pc1:"#3d2412", pc2:"#5a3419",
       stat:"12K+ iOS · 10K+ Android · 5.0★ (164 reviews)",
       desc:"Book a wash at a saved pin or buy a package. Pay from wallet or Mada, add extras, and redeem partner vouchers — riders take jobs on the map and climb a points board. Share the app: when enough people install through your link and complete a first order, you get a gift. Deep links carry the invite.",
-      tags:["Referrals","Deep links","Live map","Wallet"],
+      tags:["Referrals","Deep links","Maps","Wallet"],
       links:[
-        { label:"App Store",        url:"https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" },
-        { label:"Google Play",      url:"https://play.google.com/store/apps/details?id=com.captainz.captainz" },
-        { label:"Rider · App Store", url:"https://apps.apple.com/us/app/captainz-rider/id6751917266" },
-        { label:"Rider · Play",     url:"https://play.google.com/store/apps/details?id=com.captainz.captainzprovider" },
+        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" },
+        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.captainz.captainz" },
+        { group:"Rider",    label:"App Store",   url:"https://apps.apple.com/us/app/captainz-rider/id6751917266" },
+        { group:"Rider",    label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.captainz.captainzprovider" },
       ],
       shots:[
         { src:"assets/captains-1-splash.png",         label:"Splash & branding" },
@@ -969,9 +984,9 @@
       desc:"Book a wash or a named package with extras included. Pay by Tabby, Mada, or wallet — captains run jobs from a date-filtered earnings dashboard.",
       tags:["Tabby","Wallet","Packages","Earnings"],
       links:[
-        { label:"App Store",       url:"https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" },
-        { label:"Google Play",     url:"https://play.google.com/store/apps/details?id=sa.soapy.app" },
-        { label:"Biker · Play",    url:"https://play.google.com/store/apps/details?id=sa.soapy.driver" },
+        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" },
+        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=sa.soapy.app" },
+        { group:"Captain",  label:"Google Play", url:"https://play.google.com/store/apps/details?id=sa.soapy.driver" },
       ],
       shots:[
         { src:"assets/soapy-2-home.png",              label:"Home, wallet & packages" },
@@ -988,10 +1003,10 @@
       desc:"Shop companies or freelancers — size, color, and made-to-measure requests. Merchants accept or reject, handle returns, and move orders waiting → preparing → out for delivery. Scratch a card, reveal the code, type it in, and claim the win.",
       tags:["Scratch-to-win","Variants","Returns","Fulfillment"],
       links:[
-        { label:"App Store",            url:"https://apps.apple.com/us/app/magnet/id6746203011" },
-        { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.magnet" },
-        { label:"Provider · App Store", url:"https://apps.apple.com/us/app/magnet-provider/id6746348471" },
-        { label:"Provider · Play",      url:"https://play.google.com/store/apps/details?id=com.wady.magnetprovider" },
+        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/magnet/id6746203011" },
+        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.magnet" },
+        { group:"Merchant", label:"App Store",   url:"https://apps.apple.com/us/app/magnet-provider/id6746348471" },
+        { group:"Merchant", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.magnetprovider" },
       ],
       shots:[
         { src:"assets/magnet-2-stores.png",       label:"Store directory" },
@@ -1008,10 +1023,10 @@
       desc:"Four verticals, timed services, then a barber or the cart. Pay wallet, Mada, or cash — shops accept or reject, add extras mid-job, and withdraw.",
       tags:["Timed booking","Wallet","Payouts","Accept / reject"],
       links:[
-        { label:"App Store",            url:"https://apps.apple.com/us/app/glow-up/id6615080351" },
-        { label:"Google Play",          url:"https://play.google.com/store/apps/details?id=com.wady.naeima" },
-        { label:"Provider · App Store", url:"https://apps.apple.com/us/app/glowup-provider/id6739752819" },
-        { label:"Provider · Play",      url:"https://play.google.com/store/apps/details?id=com.wady.glowupprovider" },
+        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/glow-up/id6615080351" },
+        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.naeima" },
+        { group:"Provider", label:"App Store",   url:"https://apps.apple.com/us/app/glowup-provider/id6739752819" },
+        { group:"Provider", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.glowupprovider" },
       ],
       shots:[
         { src:"assets/glowup-1-home.png",     label:"Home & salon discovery" },
@@ -1093,6 +1108,26 @@
   const arrow = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
     stroke-linecap="round" stroke-linejoin="round"><path d="${d === 'prev' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'}"/></svg>`;
 
+  function storeMarkup(links) {
+    if (!links || !links.length) return '';
+    const grouped = links.some(l => l.group);
+    const pill = l => `<a href="${l.url}" target="_blank" rel="noopener">↗ ${l.label}</a>`;
+    if (!grouped) {
+      return `<div class="proj-links">${links.map(pill).join('')}</div>`;
+    }
+    const order = [];
+    const by = {};
+    links.forEach(l => {
+      if (!by[l.group]) { by[l.group] = []; order.push(l.group); }
+      by[l.group].push(l);
+    });
+    return `<div class="proj-stores">${order.map(g => `
+      <div class="proj-store">
+        <span class="proj-store-label">${g}</span>
+        <div class="proj-links">${by[g].map(pill).join('')}</div>
+      </div>`).join('')}</div>`;
+  }
+
   projects.forEach((p, i) => {
     const card = document.createElement('article');
     card.className = i >= INITIAL_VISIBLE ? 'proj-card is-extra' : 'proj-card';
@@ -1124,8 +1159,7 @@
       <div class="proj-roles">${p.roles}</div>
       <p class="proj-desc">${p.stat ? `<b>${p.stat}.</b> ` : ''}${p.desc}</p>
       <div class="proj-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
-      ${p.links ? `<div class="proj-links">${p.links.map(l =>
-        `<a href="${l.url}" target="_blank" rel="noopener">↗ ${l.label}</a>`).join('')}</div>` : ''}
+      ${p.links ? storeMarkup(p.links) : ''}
     `;
 
     if (p.shots) setupCarousel(card, p);
