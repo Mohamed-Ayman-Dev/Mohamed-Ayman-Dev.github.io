@@ -1,6 +1,6 @@
 # Mohamed Ayman — Portfolio
 
-Personal portfolio site for Mohamed Ayman, Senior Flutter Developer.
+Personal portfolio site for Mohamed Ayman, Flutter Developer.
 
 Single-page static site — plain HTML/CSS/JS, no build step required.
 
