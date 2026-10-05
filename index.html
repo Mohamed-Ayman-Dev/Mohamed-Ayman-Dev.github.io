@@ -126,21 +126,8 @@
   }
   .logo .accent{color:inherit;}
   .nav-links{
-    position:relative;
-    display:flex; gap:22px; list-style:none; margin:0; padding:0 0 8px; font-size:14px;
+    display:flex; gap:22px; list-style:none; margin:0; padding:0; font-size:14px;
     justify-self:center; justify-content:center;
-  }
-  .nav-links::after{
-    content:'';
-    position:absolute;
-    left:0; bottom:0;
-    height:2px; width:var(--ink-w, 0px);
-    transform:translateX(var(--ink-x, 0px));
-    background:var(--accent);
-    border-radius:2px;
-    pointer-events:none;
-    transition:transform .4s cubic-bezier(.22,1,.36,1), width .4s cubic-bezier(.22,1,.36,1), opacity .25s;
-    opacity:var(--ink-on, 0);
   }
   .nav-links a{
     color:var(--muted);
@@ -287,7 +274,6 @@
       animation:none; opacity:1; transform:none; transition:none;
     }
     .pill-dot{animation:none;}
-    .nav-links::after{transition:none;}
     .section-rule{transition:none; transform:none;}
   }
 
@@ -413,7 +399,7 @@
   }
   .arch-card:hover{border-color:rgba(130,233,251,0.4);}
   .arch-card h3{
-    margin:0 0 10px; font-size:15px; font-weight:500; color:#F2F5FA;
+    margin:0 0 10px; font-size:15px; font-weight:500; color:var(--text);
     font-family:"Instrument Sans",system-ui,sans-serif;
   }
   .arch-card h3::before{content:"› "; color:var(--accent);}
@@ -664,7 +650,7 @@
     <span class="pill"><span class="pill-dot"></span>Available for opportunities</span>
     <h1 class="display">Mohamed <span class="accent">Ayman</span></h1>
     <h2>Flutter Developer</h2>
-    <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years in Flutter, over 5 years in software. 20+ apps across social, marketplaces, booking, and others. Experience primarily in the Saudi market, also Egypt. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
+    <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years in Flutter, over 5 years in software, 20+ apps across social, marketplaces, and booking. Primarily Saudi, also Egypt. Based in Cairo; open to remote, relocate, hybrid, or on-site.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ Contact Me</a>
       <a class="btn btn-ghost" href="#projects">View Projects ↓</a>
