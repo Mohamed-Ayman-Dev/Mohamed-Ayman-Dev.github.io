@@ -160,20 +160,26 @@
   .mobile-menu.open{display:flex;}
 
   /* HERO */
-  .hero{padding:88px 0 128px;}
+  .hero{padding:88px 0 112px;}
+  .hero::before,
+  .hero::after{
+    content:""; position:absolute; left:50%; transform:translateX(-50%);
+    z-index:0; pointer-events:none;
+  }
+  .hero::before{
+    top:-20px; width:58%; height:180px;
+    background:radial-gradient(ellipse at 50% 30%, rgba(130,233,251,0.038), transparent 64%);
+  }
+  .hero::after{
+    bottom:12px; width:52%; height:150px;
+    background:radial-gradient(ellipse at 50% 72%, rgba(130,233,251,0.03), transparent 64%);
+  }
+  .hero .wrap{z-index:1;}
   .hero-top{
-    display:flex; align-items:center; gap:56px;
+    display:flex; flex-direction:column; align-items:flex-start; gap:22px;
+    max-width:720px;
   }
-  .hero-copy{flex:1; min-width:0;}
-  .hero-photo{
-    width:188px; height:188px; margin:0; flex-shrink:0;
-    border-radius:50%; overflow:hidden;
-    border:1px solid var(--border-strong);
-  }
-  .hero-photo img{
-    width:100%; height:100%; object-fit:cover; object-position:center 12%;
-    display:block;
-  }
+  .hero-copy{width:100%; min-width:0;}
   .pill{
     display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.14em;
     font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
@@ -187,7 +193,57 @@
     letter-spacing:-0.045em;
   }
   .hero h1 .accent{color:inherit;}
-  .hero .pill{color:#7DCEA0; border-color:rgba(125,206,160,0.38); background:rgba(74,222,128,0.06);}
+  .hero .pill{
+    color:#3DDC84; border-color:rgba(61,220,132,0.45); background:rgba(61,220,132,0.08);
+    font-size:13px; font-weight:500; letter-spacing:0.01em; text-transform:none;
+    font-family:inherit; cursor:pointer;
+  }
+  .pill-arrow{font-size:14px; line-height:1;}
+  .avail{position:relative; display:inline-block; margin-bottom:16px;}
+  .avail .pill{margin-bottom:0;}
+  .avail-pop{
+    position:absolute; top:calc(100% + 12px); left:0; z-index:20;
+    width:min(340px, calc(100vw - 48px));
+    background:#10161E; border:1px solid rgba(255,255,255,0.08); border-radius:16px;
+    padding:18px 18px 16px; text-align:left;
+    box-shadow:0 18px 50px rgba(0,0,0,0.45);
+  }
+  .avail-pop[hidden]{display:none;}
+  .avail-pop:not([hidden]){animation:avail-in .22s cubic-bezier(.2,.7,.2,1) both;}
+  .avail-pop.is-out{animation:avail-out .16s ease-in both;}
+  @keyframes avail-in{
+    from{opacity:0; translate:0 -8px; scale:.98;}
+    to{opacity:1; translate:0 0; scale:1;}
+  }
+  @keyframes avail-out{
+    from{opacity:1; translate:0 0; scale:1;}
+    to{opacity:0; translate:0 -6px; scale:.98;}
+  }
+  .avail-x{
+    position:absolute; top:10px; right:10px; width:28px; height:28px;
+    border:none; background:transparent; color:#8A909A; cursor:pointer; font-size:18px; line-height:1;
+  }
+  .avail-x:hover{color:#F2F5FA;}
+  .avail-kicker{
+    display:flex; align-items:center; gap:8px; margin:0 0 12px;
+    font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#3DDC84;
+  }
+  .avail-title{margin:0 0 8px; color:#F2F5FA; font-size:16px; font-weight:600; line-height:1.35; letter-spacing:-0.02em;}
+  .avail-copy{margin:0 0 16px; color:#8B9EB0; font-size:13.5px; line-height:1.55;}
+  .avail-wa{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; min-height:44px; border-radius:999px; background:#00C853; color:#fff;
+    font-size:14px; font-weight:600; letter-spacing:0;
+  }
+  .avail-wa:hover{background:#00B84A;}
+  .avail-wa svg{width:18px; height:18px; fill:currentColor;}
+  .avail-mail{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; min-height:40px; margin-top:10px; border-radius:999px;
+    border:1px solid rgba(255,255,255,0.12); color:#C5CED6; font-size:13px;
+  }
+  .avail-mail:hover{border-color:rgba(255,255,255,0.28); color:#F2F5FA;}
+  .avail-mail svg{width:15px; height:15px;}
   .hero h2{
     display:flex; align-items:center; gap:12px;
     font-size:clamp(20px,2.4vw,28px); font-weight:500; color:#9AADBE; margin:0 0 16px; letter-spacing:-0.03em;
@@ -209,17 +265,16 @@
   .btn-text:hover{color:var(--accent);}
   .social-row{display:flex; gap:14px; justify-content:flex-start; margin-bottom:0;}
   .hero-stats{
-    display:flex; justify-content:flex-start; align-items:stretch;
-    max-width:640px; margin:40px 0 0; padding-top:24px;
+    display:flex; width:auto; max-width:100%; margin:0; padding-top:14px;
     border-top:1px solid var(--border);
     position:relative; z-index:1;
   }
-  .hero-stat{flex:1; padding:0 20px; text-align:center;}
-  .hero-stat + .hero-stat{border-left:1px solid var(--border);}
+  .hero-stat{flex:none; padding:0 16px 0 0; text-align:left;}
+  .hero-stat + .hero-stat{padding-left:16px; border-left:1px solid var(--border);}
   .hero-stat b{
     display:block; font-family:"Instrument Sans",system-ui,sans-serif;
-    font-size:clamp(16px,2.4vw,22px); font-weight:600; color:var(--text);
-    letter-spacing:-0.03em; line-height:1.15; margin-bottom:6px;
+    font-size:clamp(16px,1.6vw,20px); font-weight:600; color:var(--text);
+    letter-spacing:-0.03em; line-height:1.15; margin-bottom:4px;
     white-space:nowrap;
   }
   .hero-stat span{display:block; font-size:12px; color:#8B9EB0; letter-spacing:0.03em;}
@@ -261,7 +316,6 @@
   .reveal.from-left{transform:translateX(-20px); transition-duration:.6s,.6s; transition-delay:.2s;}
   .reveal.from-right{transform:translateX(20px); transition-duration:.6s,.6s; transition-delay:.3s;}
   .reveal.in{opacity:1; transform:none;}
-  .hero-photo,
   .hero .pill,
   .hero h1,
   .hero h2,
@@ -271,7 +325,6 @@
   .hero-stats{
     animation:rise .55s cubic-bezier(.22,1,.36,1) both;
   }
-  .hero-photo{animation-name:slideIn; animation-duration:.6s; animation-delay:.05s;}
   .hero .pill{animation-delay:.1s;}
   .hero h1{animation-delay:.2s;}
   .hero h2{animation-delay:.32s;}
@@ -283,7 +336,7 @@
   @keyframes slideIn{from{opacity:0; transform:translateX(-18px);} to{opacity:1; transform:none;}}
   @media (prefers-reduced-motion: reduce){
     .reveal,
-    .hero-photo, .hero .pill, .hero h1, .hero h2, .hero .hero-copy > p,
+    .hero .pill, .hero h1, .hero h2, .hero .hero-copy > p,
     .hero .cta-row, .hero .social-row, .hero-stats{
       animation:none; opacity:1; transform:none; transition:none;
     }
@@ -292,7 +345,7 @@
   }
 
   /* ABOUT */
-  .about-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:start;}
+  .about-grid{display:grid; grid-template-columns:1fr 200px; gap:48px; align-items:start;}
   .about-body p{color:#B8B8B8; font-size:15.5px; margin:0 0 16px; line-height:1.7;}
   .about-chips{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px;}
   .about-chip{
@@ -306,22 +359,13 @@
     font-weight:600; color:var(--text); line-height:1.25;
   }
   .about-chip span{display:block; font-size:12px; color:var(--muted); line-height:1.35;}
-  .architecture-visual{
-    background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:28px;
+  .about-portrait{
+    width:200px; border-radius:16px; overflow:hidden;
+    border:1px solid var(--border); background:var(--panel); align-self:start;
   }
-  .arch-title{font-family:"Instrument Sans",system-ui,sans-serif; font-size:11.5px; color:var(--muted); margin-bottom:18px; text-transform:uppercase; letter-spacing:0.06em;}
-  .arch-layer{
-    display:flex; align-items:flex-start; gap:14px;
-    border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:10px;
-    background:rgba(255,255,255,0.015);
+  .about-portrait img{
+    display:block; width:200px; height:200px; object-fit:cover; object-position:center 18%;
   }
-  .arch-layer:last-child{margin-bottom:0;}
-  .arch-layer .l-num{
-    font-family:"Instrument Sans",system-ui,sans-serif; font-size:11px; color:var(--muted); font-weight:600;
-    line-height:1.2; padding-top:2px; min-width:1.6em;
-  }
-  .arch-layer .l-name{font-family:"Instrument Sans",system-ui,sans-serif; font-size:13px; color:var(--text); font-weight:600;}
-  .arch-layer .l-sub{font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.45;}
   /* EXPERIENCE - timeline */
   .timeline{position:relative; margin-left:12px; border-left:2px solid var(--border); padding-left:0;}
   .tl-item{position:relative; padding:0 0 34px 34px;}
@@ -589,13 +633,17 @@
     .proj-grid{grid-template-columns:repeat(2,1fr);}
     section{padding:64px 0;}
     .hero{padding:72px 0 96px; text-align:center;}
-    .hero-top{flex-direction:column; gap:22px;}
-    .hero-photo{width:132px; height:132px;}
+    .hero-top{align-items:center; max-width:none;}
+    .hero-stat, .hero-stat + .hero-stat{text-align:center; padding:0 10px; border:none;}
+    .hero-stat + .hero-stat{border-left:1px solid var(--border);}
+    .about-portrait, .about-portrait img{width:160px; height:160px;}
+    .about-portrait{margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
     .hero h2{justify-content:center;}
+    .avail-pop{left:50%; transform:translateX(-50%);}
     .cta-row,.social-row,.hero-stats{justify-content:center;}
     .hero p,.hero-stats{margin-left:auto; margin-right:auto;}
-    .hero-stat{padding:0 12px;}
-    .hero-stat b{font-size:20px;}
+    .hero-stat b{font-size:17px;}
     .wrap{padding:0 22px;}
     .nav-inner{padding:16px 22px;}
   }
@@ -658,11 +706,26 @@
   <section class="hero" id="home">
     <div class="wrap">
     <div class="hero-top">
-    <div class="hero-photo">
-      <img src="assets/mohamed-ayman.jpg" alt="Mohamed Ayman" width="188" height="188">
-    </div>
     <div class="hero-copy">
-    <span class="pill"><span class="pill-dot"></span>Available for opportunities</span>
+    <div class="avail">
+      <button type="button" class="pill" id="availBtn" aria-expanded="false" aria-controls="availPop">
+        <span class="pill-dot"></span>Available for new opportunities <span class="pill-arrow" aria-hidden="true">→</span>
+      </button>
+      <div class="avail-pop" id="availPop" hidden>
+        <button type="button" class="avail-x" id="availClose" aria-label="Close">×</button>
+        <p class="avail-kicker"><span class="pill-dot"></span>Available now</p>
+        <p class="avail-title">Hey! I'm actively looking for my next opportunity.</p>
+        <p class="avail-copy">Reach out and I'll walk you through my work in detail — architecture decisions, real challenges solved, and the full story behind each app.</p>
+        <a class="avail-wa" href="https://wa.me/201146574367" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 006.1 18.7L4 21l2.4-1.1A11 11 0 1020.5 3.5zM12 19.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.5.7.7-2.4-.2-.3A8.2 8.2 0 1112 19.2zm4.5-6.1c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.1-.3a.5.5 0 000-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 12 12 0 004.6 4.1 5.3 5.3 0 002.3.6 2.2 2.2 0 001.5-.6 1.8 1.8 0 00.4-1.2c0-.2 0-.3-.2-.4z"/></svg>
+          Message me on WhatsApp
+        </a>
+        <a class="avail-mail" href="mailto:mohamed.ayman.devv@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          mohamed.ayman.devv@gmail.com
+        </a>
+      </div>
+    </div>
     <h1 class="display">Mohamed <span class="accent">Ayman</span></h1>
     <h2><i class="hero-mark" aria-hidden="true"></i>Flutter Developer</h2>
     <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years in Flutter, over 5 years in software. 20+ apps across social, marketplaces, booking, and others. Experience primarily in the Saudi market, also Egypt. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
@@ -686,11 +749,11 @@
       </a>
     </div>
     </div>
-    </div>
     <div class="hero-stats">
       <div class="hero-stat"><b>5+ years</b><span>in software</span><span class="fine">3.5+ in Flutter</span></div>
       <div class="hero-stat"><b>20+</b><span>production apps</span></div>
       <div class="hero-stat"><b>Open</b><span>on-site · remote · hybrid</span></div>
+    </div>
     </div>
     </div>
   </section>
@@ -727,36 +790,8 @@
           </div>
         </div>
       </div>
-      <div class="architecture-visual reveal from-right">
-        <div class="arch-title">// how I ship</div>
-        <div class="arch-layer">
-          <div class="l-num">01</div>
-          <div>
-            <div class="l-name">Estimate</div>
-            <div class="l-sub">Brief → scope the mobile work</div>
-          </div>
-        </div>
-        <div class="arch-layer">
-          <div class="l-num">02</div>
-          <div>
-            <div class="l-name">Build</div>
-            <div class="l-sub">Flutter, payments, the real features</div>
-          </div>
-        </div>
-        <div class="arch-layer">
-          <div class="l-num">03</div>
-          <div>
-            <div class="l-name">Release</div>
-            <div class="l-sub">App Store + Google Play</div>
-          </div>
-        </div>
-        <div class="arch-layer">
-          <div class="l-num">04</div>
-          <div>
-            <div class="l-name">Keep live</div>
-            <div class="l-sub">Crashes, the next slice, listing stays up</div>
-          </div>
-        </div>
+      <div class="about-portrait reveal from-right">
+        <img src="assets/mohamed-ayman.jpg" alt="Mohamed Ayman" width="640" height="640">
       </div>
     </div>
     </div>
@@ -1701,6 +1736,38 @@ Future<void> init() async {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const availBtn = document.getElementById('availBtn');
+  const availPop = document.getElementById('availPop');
+  const availCalm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const setAvail = (open) => {
+    if (open) {
+      availPop.classList.remove('is-out');
+      availPop.hidden = false;
+      availBtn.setAttribute('aria-expanded', 'true');
+      return;
+    }
+    if (availPop.hidden || availPop.classList.contains('is-out')) return;
+    availBtn.setAttribute('aria-expanded', 'false');
+    if (availCalm.matches) {
+      availPop.hidden = true;
+      return;
+    }
+    availPop.classList.add('is-out');
+  };
+  availPop.addEventListener('animationend', (e) => {
+    if (e.target !== availPop || !availPop.classList.contains('is-out')) return;
+    availPop.hidden = true;
+    availPop.classList.remove('is-out');
+  });
+  availBtn.addEventListener('click', () => setAvail(availPop.hidden || availPop.classList.contains('is-out')));
+  document.getElementById('availClose').addEventListener('click', () => setAvail(false));
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.avail')) setAvail(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setAvail(false);
+  });
 
   // Mobile menu
   const navToggle = document.getElementById('navToggle');
