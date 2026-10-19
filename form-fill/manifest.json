@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Dev Fill",
+  "version": "1.0.0",
+  "description": "Fill job forms from a developer profile stored on this computer.",
+  "action": {
+    "default_title": "Dev Fill",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage", "activeTab", "scripting"]
+}

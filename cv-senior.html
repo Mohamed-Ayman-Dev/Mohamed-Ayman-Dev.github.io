@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Ayman — Flutter Developer CV (senior cut)</title>
+<style>
+  @page { size: A4; margin: 10mm 12mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    font-size: 9.4pt;
+    line-height: 1.28;
+    background: #fff;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2.5px;
+    text-decoration-thickness: 0.7px;
+    text-decoration-color: #888;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: 700;
+    margin: 0 0 2px;
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+    font-size: 11pt;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .contact {
+    text-align: center;
+    font-size: 9pt;
+    color: #333;
+    margin: 0;
+  }
+  .contact .site {
+    font-weight: 700;
+    text-decoration-color: #111;
+  }
+  .proj-note {
+    margin: 0 0 5px;
+    font-size: 9pt;
+    color: #333;
+  }
+
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 7px 0 3px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #111;
+    page-break-after: avoid;
+  }
+
+  .summary { margin: 0; line-height: 1.36; }
+
+  .job { margin: 0 0 5px; page-break-inside: avoid; }
+  .proj { margin: 0 0 5px; page-break-inside: avoid; }
+  .job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .job-top .left { font-weight: 700; }
+  .job-top .when { white-space: nowrap; }
+  .job-loc { font-size: 9.5pt; margin: 1px 0 3px; color: #333; }
+  ul { margin: 0; padding: 0 0 0 18px; }
+  li { margin: 0 0 3px; }
+
+  .skills p { margin: 0 0 2px; }
+  .skills b { font-weight: 700; }
+
+  .proj .head { font-weight: 700; }
+  .proj .stack { font-weight: 400; }
+  .stores {
+    font-weight: 400;
+    font-size: 8.5pt;
+    color: #333;
+  }
+
+  .edu { margin: 2px 0 0; }
+
+  @media print {
+    html { background: #fff; }
+    body {
+      width: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  @media screen {
+    html { background: #d8d8d8; }
+    body {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      padding: 10mm 12mm;
+      box-shadow: 0 2px 18px rgba(0,0,0,.18);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Mohamed Ayman</h1>
+  <p class="title">Senior Flutter Developer</p>
+  <p class="contact">
+    Cairo, Egypt · Open to remote, relocate, hybrid, or on-site<br>
+    <a href="mailto:mohamed.ayman.devv@gmail.com">mohamed.ayman.devv@gmail.com</a>
+    · <a href="tel:+201146574367">+20 114 657 4367</a><br>
+    <a href="https://www.linkedin.com/in/mohamed-ayman-devv">linkedin.com/in/mohamed-ayman-devv</a>
+    · <a href="https://github.com/Mohamed-Ayman-Dev">github.com/Mohamed-Ayman-Dev</a>
+    · <a class="site" href="https://mohamed-ayman-dev.github.io/">mohamed-ayman-dev.github.io</a>
+  </p>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Senior Flutter developer with 3.5+ years shipping production iOS and Android apps across different product types — social, marketplace, booking, and others — 20+ live store listings and 30K+ downloads.
+    I own the mobile side from estimate through App Store and Google Play, on both the customer and provider apps.
+    I work with the client on scope and technical trade-offs, then set the architecture and ship under the deadline.
+    On a client product I led a small Flutter team: estimates, how the work was split, and the technical calls.
+  </p>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><b>Mobile:</b> Flutter, Dart, REST APIs, iOS and Android store release, app flavors / multiple binaries, RTL and localization, performance profiling, camera, maps, native APIs</p>
+    <p><b>Architecture:</b> Feature-first Clean Architecture, BLoC, Cubit, Provider, Riverpod, GetIt, repository / use case</p>
+    <p><b>Payments:</b> Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay, PayTabs, in-app wallets, payouts</p>
+    <p><b>Realtime and product:</b> Pusher, Agora, Zego, Firebase, FCM, deep linking, Google Maps, live tracking, QR redeem, KYC, vendor ops, Crashlytics, CI/CD, Git</p>
+  </div>
+
+  <h2>Work Experience</h2>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="left">Flutter Developer, <a href="https://wady.sa/">Wady</a></div>
+      <div class="when">Feb 2026 – Present</div>
+    </div>
+    <div class="job-loc">Riyadh, Saudi Arabia · Remote</div>
+    <ul>
+      <li>Own the Flutter side of client products from estimate through store release, then keep the listings live.</li>
+      <li>Own quote-to-order marketplace work on customer and merchant apps: RFQ, bidding, fulfillment, and returns.</li>
+      <li>Own listing/matching and vendor-ops products on both apps, including KYC and QR redeem.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="left">Flutter Developer, <a href="https://topline.com.sa/">Topline</a></div>
+      <div class="when">Aug 2024 – Feb 2026</div>
+    </div>
+    <div class="job-loc">Riyadh, Saudi Arabia · Remote</div>
+    <ul>
+      <li>Technical point of contact on a client social platform — stories, chat, groups, camera, subscriptions, and paid creator sessions.</li>
+      <li>Split work across a 3-developer Flutter team and held final say on technical decisions.</li>
+      <li>Evaluated AR/camera-filter vendors after the client cut the existing SDK over cost, and presented technical and cost trade-offs.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="left">Flutter Developer, <a href="https://wady.sa/">Wady</a></div>
+      <div class="when">Jan 2023 – Aug 2024</div>
+    </div>
+    <div class="job-loc">Riyadh, Saudi Arabia</div>
+    <ul>
+      <li>Shipped 10+ production apps and kept them live, including store listings and payment integrations.</li>
+      <li>Owned customer and provider apps for on-demand and booking products: packages, wallets, job flow, and payouts.</li>
+      <li>Integrated Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets across those products.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="left">Software Analyst &amp; QA, Entlq</div>
+      <div class="when">Jun 2021 – Feb 2023</div>
+    </div>
+    <div class="job-loc">Riyadh, Saudi Arabia</div>
+    <ul>
+      <li>Single client contact: turned asks into tickets the team could build, then tested the release before it went out.</li>
+      <li>Kept scope and progress visible in Trello so engineering was not guessing.</li>
+    </ul>
+  </div>
+
+  <div class="projects">
+  <h2>Projects</h2>
+  <p class="proj-note">
+    Screenshots:
+    <a href="https://mohamed-ayman-dev.github.io/">mohamed-ayman-dev.github.io</a>.
+    Client source is private (NDA); walkthrough on a call.
+  </p>
+
+  <div class="proj">
+    <div class="head">GTech — Quote-to-order spare-parts marketplace <span class="stack">(Flutter; customer and merchant apps)</span>
+      <span class="stores">
+        · <a href="https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045">App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.wady.ghiartech">Google Play</a>
+        · <a href="https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414">Business · App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.wady.gtechseller">Business · Play</a>
+      </span>
+    </div>
+    <ul>
+      <li>Own both apps. RFQ by photo and spec, merchant bids, in-app chat, and fulfillment — not a catalog.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="head">Timey — Social platform with creator booking <span class="stack">(Flutter; client project; Pusher, Agora)</span></div>
+    <ul>
+      <li>Stories, realtime chat, groups, in-app camera, subscriptions; creator side has paid video sessions and a self-serve ads flow.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="head">Captainz — On-demand car wash <span class="stack">(Flutter; customer and rider apps)</span>
+      <span class="stores">
+        · <a href="https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300">App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.captainz.captainz">Google Play</a>
+        · <a href="https://apps.apple.com/us/app/captainz-rider/id6751917266">Rider · App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.captainz.captainzprovider">Rider · Play</a>
+      </span>
+    </div>
+    <ul>
+      <li>12K+ iOS and 10K+ Android; 5.0 rating (164 reviews). Own both apps: on-demand wash at a pin, extras, live tracking, and rider earnings.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="head">Vero — Car and AC wash <span class="stack">(Flutter; customer and provider apps)</span>
+      <span class="stores">
+        · <a href="https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544">App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.wady.vero">Google Play</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.wady.veroprovider">Provider · Play</a>
+      </span>
+    </div>
+    <ul>
+      <li>14.2K iOS and 1,000+ Android. Own both apps: packages, booking, live map tracking, and job status on the provider side.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="head">Magnet — Custom commerce <span class="stack">(Flutter; customer and merchant apps)</span>
+      <span class="stores">
+        · <a href="https://apps.apple.com/us/app/magnet/id6746203011">App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.wady.magnet">Google Play</a>
+        · <a href="https://apps.apple.com/us/app/magnet-provider/id6746348471">Provider · App Store</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.wady.magnetprovider">Provider · Play</a>
+      </span>
+    </div>
+    <ul>
+      <li>Own both apps: company/freelancer shops, made-to-measure requests, orders/returns, and status through delivery.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="job-top">
+    <div class="left">Faculty of Arts, <a href="https://www.helwan.edu.eg/">Helwan University</a></div>
+    <div class="when">2018 – 2021</div>
+  </div>
+  <p class="edu">Cairo, Egypt · Arabic (native) · English (professional working)</p>
+  </div>
+
+</body>
+</html>
